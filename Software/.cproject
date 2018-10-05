@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="com.img.toolchain.mti.1579266421">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.img.toolchain.mti.1579266421" moduleId="org.eclipse.cdt.core.settings" name="Default">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration buildProperties="" id="com.img.toolchain.mti.1579266421" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
+					<folderInfo id="com.img.toolchain.mti.1579266421.1733071814" name="/" resourcePath="">
+						<toolChain id="com.img.toolchain.mti.721674034" name="MTI GNU GCC for MIPS R2/R5 Bare-metal" superClass="com.img.toolchain.mti">
+							<option id="com.img.toolchain.mti.prefix.2061768412" name="Prefix" superClass="com.img.toolchain.mti.prefix"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.img.targetplatform.mti.elf.1180338486" isAbstract="false" osList="all" superClass="com.img.targetplatform.mti.elf"/>
+							<builder id="cdt.managedbuild.builder.gnu.cross.174458380" managedBuildOn="false" name="Gnu Make Builder.Default" superClass="cdt.managedbuild.builder.gnu.cross"/>
+							<tool id="com.mips.ics.project.toolchains.cross.mti.c.compiler.358294208" name="MTI GNU C Compiler" superClass="com.mips.ics.project.toolchains.cross.mti.c.compiler"/>
+							<tool id="com.mips.ics.project.toolchains.cross.mti.cpp.compiler.1691280590" name="MTI GNU C++ Compiler" superClass="com.mips.ics.project.toolchains.cross.mti.cpp.compiler"/>
+							<tool id="com.mips.ics.project.toolchains.cross.mti.c.linker.414877343" name="MTI GNU C Linker" superClass="com.mips.ics.project.toolchains.cross.mti.c.linker"/>
+							<tool id="com.mips.ics.project.toolchains.cross.mti.cpp.linker.255494693" name="MTI GNU C++ Linker" superClass="com.mips.ics.project.toolchains.cross.mti.cpp.linker"/>
+							<tool id="com.mips.ics.project.toolchains.cross.mti.archiver.521467861" name="MTI GNU Archiver" superClass="com.mips.ics.project.toolchains.cross.mti.archiver"/>
+							<tool id="com.mips.ics.project.toolchains.cross.mti.assembler.1866842669" name="MTI GNU Assembler" superClass="com.mips.ics.project.toolchains.cross.mti.assembler"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="software.null.888542785" name="software"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+</cproject>
