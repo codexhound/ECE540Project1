@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="38" Path="C:/Users/RampantVelcro/Documents/Class/540/ECE540Project1/ECE540Project1.xpr">
+<Project Version="7" Minor="38" Path="C:/Users/RampantVelcro/Documents/Class/ECE540/ECE540Project1/ECE540Project1.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="e3a838dec29d4ec89a567d5c503dcf35"/>
@@ -1679,16 +1679,6 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../Desktop/SocGettingStarted/projGS/projGS/hardware/rtl_up/boards/nexys4_ddr/mfp_nexys4_ddr.v"/>
           <Attr Name="ImportTime" Val="1538715242"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../Project1A/Project1A.srcs/sources_1/new/7segdisplay.v">
-        <FileInfo>
-          <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Project1/Project1.srcs/sources_1/new/7segdisplay.v"/>
-          <Attr Name="ImportTime" Val="1538531330"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
