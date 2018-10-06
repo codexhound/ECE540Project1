@@ -211,19 +211,19 @@ readIO:
 		
 	labelcompassdecrement:
 		#decrement the compass counter
-		sub $25 $25 1
+		subi $25 $25 1
 		bre $25 -1 decrementtens
 		j statemachinenext
 
 	decrementtens:
 		li $25 9
-		sub $24 $24 1
+		subi $24 $24 1
 		bre $24 -1 decrementhundreds
 		j statemachinenext
 
 	decrementhundreds:
 		li $24 9
-		sub $23 $23 1
+		subi $23 $23 1
 		bre $23 -1 resetcompasscountersdecrement
 		j statemachinenext
 
@@ -242,13 +242,13 @@ readIO:
 
 	labelcompassincrement:
 		#increment the compass counter
-		add $25 $25 1
+		addi $25 $25 1
 		bre $25 10 incrementtens
 		j statemachinenext
 
 	incrementtens:
 		li $25 0
-		add $24 $24 1
+		addi $24 $24 1
 		bre $23 3 incrementtenslast #if hundreds is 3
 		bre $24 10 incrementhundreds #else if tens is 10
 		j statemachinenext
@@ -259,7 +259,7 @@ readIO:
 
 	incrementhundreds:
 		li $24 0
-		add $23 $23 1
+		addi $23 $23 1
 		j statemachinenext
 	
 	statemachinenext: #motion state machine (next state only)
@@ -285,7 +285,7 @@ readIO:
 	bre $26 5 labelenext
 	bre $26 6 labelfnext
 	bre $26 7 labelgnext
-	j label labelskipnextstate
+	j labelskipnextstate
 
 	labelidlenext:
 	  bre $19 3 anext   #forward
@@ -298,7 +298,7 @@ readIO:
 	  bre $19 6 anext		#cwf
 	  bre $19 0 gnext		#idle
 	  bre $19 15 gnext		#idle
-	  j label labelskipnextstate
+	  j labelskipnextstate
 	  #write the other state like this
 	  
 	labelanext:
@@ -312,7 +312,7 @@ readIO:
 	  bre $19 6 bnext
 	  bre $19 0 idlenext
 	  bre $19 15 idlenext
-	  j label labelskipnextstate
+	  j labelskipnextstate
 	
 	labelbnext:
 	  bre $19 3 idlenext
