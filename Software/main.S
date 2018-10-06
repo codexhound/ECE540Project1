@@ -158,26 +158,26 @@ readIO:
 	#branch statement is checking if equal, if true then goes to label (equivalent to if statement)
 	#figure out the clock speed (loop speed), if the state should go to next state based on clock counter(pseudocode)
 
-	#input from button data comes in bits like so -> UDRL
+	#input from button data comes in bits like so -> UDLR
 	#forward -> 0011 (3)
 	#reverse -> 1100 (12)
 	#idle -> 0000 (0) or 1111 (15)
-	#clockwise -> 0001 (d1) or 0111 (d7) (reverseright motor, right motor and left motor on)
-	#counterclockwise -> 0010 (d2) or 1011 (d11) (reverse left motor, left motor and right on)
-	#clockwise fast -> 0101 (d5) (reverse right and left)
-	#counter clockwise fast -> 1010 (d10) (reverse left and right motors)
+	#clockwise -> 0010 (d2) or 0111 (d7) (reverseright motor, right motor and left motor on)
+	#counterclockwise -> 0001 (d1) or 1011 (d11) (reverse left motor, left motor and right on)
+	#clockwise fast -> 0110 (d6) (reverse right and left)
+	#counter clockwise fast -> 1001 (d9) (reverse left and right motors)
 
-	bre $19 5 labelfast #clockwise fast
-	bre $19 10 labelfast #counterclockwise fast
+	bre $19 6 labelfast #clockwise fast
+	bre $19 9 labelfast #counterclockwise fast
 	
 	bre $19 3 labelslow #forward
 	bre $19 12 labelslow #reverse
 	bre $19 0 labelslow #idle
 	bre $19 15 labelslow #idle
 
-	bre $19 1 labelnorm #clockwise
+	bre $19 2 labelnorm #clockwise
 	bre $19 7 labelnorm #clockwise
-	bre $19 2 labelnorm #counter clockwise
+	bre $19 1 labelnorm #counter clockwise
 	bre $19 11 labelnorm #counter clockwise
 	
 	j label labelskipnextstate
@@ -188,8 +188,8 @@ readIO:
 		j label labelskipnextstate
 		
 	labelfastcheck:
-		bre $19 10 labelcompassdecrement
-		bre $19 5 labelcompassincrement
+		bre $19 9 labelcompassdecrement
+		bre $19 6 labelcompassincrement
 		j statemachinenext
 		
 	labelslow:
@@ -203,8 +203,8 @@ readIO:
 		j label labelskipnextstate
 		
 	labelnormcheck:
-		bre $19 2 labelcompassdecrement
-		bre $19 1 labelcompassincrement
+		bre $19 1 labelcompassdecrement
+		bre $19 2 labelcompassincrement
 		bre $19 11 labelcompassdecrement
 		bre $19 7 labelcompassincrement
 		j statemachinenext
@@ -286,16 +286,16 @@ readIO:
 	bre $26 6 labelfnext
 	bre $26 7 labelgnext
 	j label labelskipnextstate
-	
+
 	labelidlenext:
 	  bre $19 3 anext   #forward
 	  bre $19 12 dnext   #reverse
-	  bre $19 2 anext 		#cc
+	  bre $19 1 anext 		#cc
 	  bre $19 11 anext 		#cc
-	  bre $19 10 anext 		#ccf
-	  bre $19 1 anext		#cw
+	  bre $19 9 anext 		#ccf
+	  bre $19 2 anext		#cw
 	  bre $19 7 anext		#cw
-	  bre $19 5 anext		#cwf
+	  bre $19 6 anext		#cwf
 	  bre $19 0 gnext		#idle
 	  bre $19 15 gnext		#idle
 	  j label labelskipnextstate
@@ -304,12 +304,12 @@ readIO:
 	labelanext:
 	  bre $19 3 idlenext
 	  bre $19 12 idlenext
-	  bre $19 2 fnext
+	  bre $19 1 fnext
 	  bre $19 11 fnext
-	  bre $19 10 fnext
-	  bre $19 1 bnext
+	  bre $19 9 fnext
+	  bre $19 2 bnext
 	  bre $19 7 bnext
-	  bre $19 5 bnext
+	  bre $19 6 bnext
 	  bre $19 0 idlenext
 	  bre $19 15 idlenext
 	  j label labelskipnextstate
@@ -317,12 +317,12 @@ readIO:
 	labelbnext:
 	  bre $19 3 idlenext
 	  bre $19 12 idlenext
-	  bre $19 2 anext
+	  bre $19 1 anext
 	  bre $19 11 anext
-	  bre $19 10 anext
-	  bre $19 1 cnext
+	  bre $19 9 anext
+	  bre $19 2 cnext
 	  bre $19 7 cnext
-	  bre $19 5 cnext
+	  bre $19 6 cnext
 	  bre $19 0 idlenext
 	  bre $19 15 idlenext
 	  j labelskipnextstate
@@ -330,12 +330,12 @@ readIO:
 	labelcnext:
 	  bre $19 3 idlenext
 	  bre $19 12 idlenext
-	  bre $19 2 bnext
+	  bre $19 1 bnext
 	  bre $19 11 bnext
-	  bre $19 10 bnext
-	  bre $19 1 dnext
+	  bre $19 9 bnext
+	  bre $19 2 dnext
 	  bre $19 7 dnext
-	  bre $19 5 dnext
+	  bre $19 6 dnext
 	  bre $19 0 idlenext
 	  bre $19 15 idlenext
 	  j labelskipnextstate
@@ -343,12 +343,12 @@ readIO:
 	dnextnext:
 	  bre $19 3 idlenext
 	  bre $19 12 idlenext
-	  bre $19 2 cnext
+	  bre $19 1 cnext
 	  bre $19 11 cnext
-	  bre $19 10 cnext
-	  bre $19 1 enext
+	  bre $19 9 cnext
+	  bre $19 2 enext
 	  bre $19 7 enext
-	  bre $19 5 enext
+	  bre $19 6 enext
 	  bre $19 0 idlenext
 	  bre $19 15 idlenext
 	  j labelskipnextstate
@@ -356,12 +356,12 @@ readIO:
 	labelenext:
 	  bre $19 3 idlenext
 	  bre $19 12 idlenext
-	  bre $19 2 dnext
+	  bre $19 1 dnext
 	  bre $19 11 dnext
-	  bre $19 10 dnext
-	  bre $19 1 fnext
+	  bre $19 9 dnext
+	  bre $19 2 fnext
 	  bre $19 7 fnext
-	  bre $19 5 fnext
+	  bre $19 6 fnext
 	  bre $19 0 idlenext
 	  bre $19 15 idlenext
 	  j labelskipnextstate
@@ -369,12 +369,12 @@ readIO:
 	labelfnext:
 	  bre $19 3 idlenext
 	  bre $19 12 idlenext
-	  bre $19 2 enext
+	  bre $19 1 enext
 	  bre $19 11 enext
-	  bre $19 10 enext
-	  bre $19 1 anext
+	  bre $19 9 enext
+	  bre $19 2 anext
 	  bre $19 7 anext
-	  bre $19 5 anext
+	  bre $19 6 anext
 	  bre $19 0 idlenext
 	  bre $19 15 idlenext
 	  j labelskipnextstate
