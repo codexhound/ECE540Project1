@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1538715286">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1538886222">
   <File Type="PA-TCL" Name="mfp_nexys4_ddr.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="mfp_nexys4_ddr_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="mfp_nexys4_ddr_reports.tcl"/>
   <File Type="RDS-RDS" Name="mfp_nexys4_ddr.vds"/>
   <File Type="RDS-UTIL" Name="mfp_nexys4_ddr_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="mfp_nexys4_ddr_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="mfp_nexys4_ddr.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="mfp_nexys4_ddr_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="mfp_nexys4_ddr_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/Desktop/SocGettingStarted/projGS/projGS/hardware/rtl_up/core/RAMB4K_S16.v">
@@ -1627,16 +1630,6 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../Desktop/SocGettingStarted/projGS/projGS/hardware/rtl_up/boards/nexys4_ddr/mfp_nexys4_ddr.v"/>
         <Attr Name="ImportTime" Val="1538715242"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../Project1A/Project1A.srcs/sources_1/new/7segdisplay.v">
-      <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Project1/Project1.srcs/sources_1/new/7segdisplay.v"/>
-        <Attr Name="ImportTime" Val="1538531330"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

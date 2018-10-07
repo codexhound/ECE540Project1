@@ -185,25 +185,25 @@ readIO:
 	labelfast:
 		bre $22 5 labelfastcheck #has the 10hz counter reached the period
 		# else
-		j label labelskipnextstate
+		j labelskipnextstate #skip all the next state stuff, not time yet
 		
 	labelfastcheck:
-		bre $19 9 labelcompassdecrement
+		bre $19 9 labelcompassdecrement #decrement in any case that robot is turning cc, increment otherwise
 		bre $19 6 labelcompassincrement
 		j statemachinenext
 		
 	labelslow:
-		bre $20 50 statemachinenext
+		bre $20 50 statemachinenext #check 1hz counter
 		$else
-		j label labelskipnextstate
+		j labelskipnextstate
 		
 	labelnorm:
-		bre $21 10 labelnormcheck
+		bre $21 10 labelnormcheck #check 5 hz counter
 		$else
-		j label labelskipnextstate
+		j labelskipnextstate
 		
 	labelnormcheck:
-		bre $19 1 labelcompassdecrement
+		bre $19 1 labelcompassdecrement #decrement in any case that robot is turning cc, increment otherwise
 		bre $19 2 labelcompassincrement
 		bre $19 11 labelcompassdecrement
 		bre $19 7 labelcompassincrement
@@ -288,96 +288,95 @@ readIO:
 	j labelskipnextstate
 
 	labelidlenext:
-	  bre $19 3 anext   #forward
-	  bre $19 12 dnext   #reverse
-	  bre $19 1 anext 		#cc
-	  bre $19 11 anext 		#cc
-	  bre $19 9 anext 		#ccf
-	  bre $19 2 anext		#cw
-	  bre $19 7 anext		#cw
-	  bre $19 6 anext		#cwf
-	  bre $19 0 gnext		#idle
-	  bre $19 15 gnext		#idle
-	  j labelskipnextstate
-	  #write the other state like this
+	  bre $19 3 anext   		#forward
+	  bre $19 12 dnext   		#reverse
+	  bre $19 1 anext 			#cc
+	  bre $19 11 anext 			#cc
+	  bre $19 9 anext 			#ccf
+	  bre $19 2 anext			#cw
+	  bre $19 7 anext			#cw
+	  bre $19 6 anext			#cwf
+	  bre $19 0 gnext			#idle
+	  bre $19 15 gnext			#idle
+	  j idlenext
 	  
 	labelanext:
-	  bre $19 3 idlenext
-	  bre $19 12 idlenext
-	  bre $19 1 fnext
-	  bre $19 11 fnext
-	  bre $19 9 fnext
-	  bre $19 2 bnext
-	  bre $19 7 bnext
-	  bre $19 6 bnext
-	  bre $19 0 idlenext
-	  bre $19 15 idlenext
-	  j labelskipnextstate
+	  bre $19 3 idlenext		#forward		
+	  bre $19 12 idlenext	 	#reverse		
+	  bre $19 1 fnext			#cc	
+	  bre $19 11 fnext			#cc	
+	  bre $19 9 fnext			#ccf	
+	  bre $19 2 bnext			#cw	
+	  bre $19 7 bnext			#cw	
+	  bre $19 6 bnext			#cwf	
+	  bre $19 0 idlenext		#idle		
+	  bre $19 15 idlenext		#idle		
+	  j idlenext
 	
 	labelbnext:
-	  bre $19 3 idlenext
-	  bre $19 12 idlenext
-	  bre $19 1 anext
-	  bre $19 11 anext
-	  bre $19 9 anext
-	  bre $19 2 cnext
-	  bre $19 7 cnext
-	  bre $19 6 cnext
-	  bre $19 0 idlenext
-	  bre $19 15 idlenext
-	  j labelskipnextstate
+	  bre $19 3 idlenext		#forward					
+	  bre $19 12 idlenext		#reverse					
+	  bre $19 1 anext			#cc			
+	  bre $19 11 anext			#cc			
+	  bre $19 9 anext			#ccf			
+	  bre $19 2 cnext			#cw			
+	  bre $19 7 cnext			#cw			
+	  bre $19 6 cnext			#cwf			
+	  bre $19 0 idlenext		#idle					
+	  bre $19 15 idlenext		#idle					
+	  j idlenext
 	  
 	labelcnext:
-	  bre $19 3 idlenext
-	  bre $19 12 idlenext
-	  bre $19 1 bnext
-	  bre $19 11 bnext
-	  bre $19 9 bnext
-	  bre $19 2 dnext
-	  bre $19 7 dnext
-	  bre $19 6 dnext
-	  bre $19 0 idlenext
-	  bre $19 15 idlenext
-	  j labelskipnextstate
+	  bre $19 3 idlenext		#forward				
+	  bre $19 12 idlenext		#reverse				
+	  bre $19 1 bnext			#cc		
+	  bre $19 11 bnext			#cc		
+	  bre $19 9 bnext			#ccf		
+	  bre $19 2 dnext			#cw		
+	  bre $19 7 dnext			#cw		
+	  bre $19 6 dnext			#cwf		
+	  bre $19 0 idlenext		#idle				
+	  bre $19 15 idlenext		#idle				
+	  j idlenext
 	  
 	dnextnext:
-	  bre $19 3 idlenext
-	  bre $19 12 idlenext
-	  bre $19 1 cnext
-	  bre $19 11 cnext
-	  bre $19 9 cnext
-	  bre $19 2 enext
-	  bre $19 7 enext
-	  bre $19 6 enext
-	  bre $19 0 idlenext
-	  bre $19 15 idlenext
-	  j labelskipnextstate
+	  bre $19 3 idlenext		#forward				
+	  bre $19 12 idlenext		#reverse				
+	  bre $19 1 cnext			#cc		
+	  bre $19 11 cnext			#cc		
+	  bre $19 9 cnext			#ccf		
+	  bre $19 2 enext			#cw		
+	  bre $19 7 enext			#cw		
+	  bre $19 6 enext			#cwf		
+	  bre $19 0 idlenext		#idle				
+	  bre $19 15 idlenext		#idle				
+	  j idlenext
 	  
 	labelenext:
-	  bre $19 3 idlenext
-	  bre $19 12 idlenext
-	  bre $19 1 dnext
-	  bre $19 11 dnext
-	  bre $19 9 dnext
-	  bre $19 2 fnext
-	  bre $19 7 fnext
-	  bre $19 6 fnext
-	  bre $19 0 idlenext
-	  bre $19 15 idlenext
-	  j labelskipnextstate
+	  bre $19 3 idlenext		#forward			
+	  bre $19 12 idlenext		#reverse			
+	  bre $19 1 dnext			#cc	
+	  bre $19 11 dnext			#cc	
+	  bre $19 9 dnext			#ccf	
+	  bre $19 2 fnext			#cw	
+	  bre $19 7 fnext			#cw	
+	  bre $19 6 fnext			#cwf	
+	  bre $19 0 idlenext		#idle			
+	  bre $19 15 idlenext		#idle			
+	  j idlenext
 	  
 	labelfnext:
-	  bre $19 3 idlenext
-	  bre $19 12 idlenext
-	  bre $19 1 enext
-	  bre $19 11 enext
-	  bre $19 9 enext
-	  bre $19 2 anext
-	  bre $19 7 anext
-	  bre $19 6 anext
-	  bre $19 0 idlenext
-	  bre $19 15 idlenext
-	  j labelskipnextstate
+	  bre $19 3 idlenext		#forward			
+	  bre $19 12 idlenext		#reverse			
+	  bre $19 1 enext			#cc	
+	  bre $19 11 enext			#cc	
+	  bre $19 9 enext			#ccf	
+	  bre $19 2 anext			#cw	
+	  bre $19 7 anext			#cw	
+	  bre $19 6 anext			#cwf	
+	  bre $19 0 idlenext		#idle			
+	  bre $19 15 idlenext		#idle			
+	  j idlenext
 	  
 	labelgnext:
 	  j idlenext #next state from g is always idle

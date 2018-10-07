@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/RampantVelcro/Documents/Class/540/Project1/Project1.runs/impl_1'
+HD_PWD='C:/Users/RampantVelcro/Documents/Class/ECE540/ECE540Project1/ECE540Project1.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .write_bitstream.begin.rst
+/bin/touch .init_design.begin.rst
 EAStep vivado -log mfp_nexys4_ddr.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source mfp_nexys4_ddr.tcl -notrace
 
 

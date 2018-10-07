@@ -61,9 +61,9 @@ module mfp_ahb_display(
     always @(posedge HCLK or negedge HRESETn)
        
        if (~HRESETn) begin
-         en <= 0;
+         en <= 8'hff; //enable low, defaults to off
          digits <= 0;
-         dp <= 0; 
+         dp <= 8'hff; 
        end else if (we)
          case (HADDR_d)
            `H_DIS_EN_ADDR: en <= HWDATA[7:0];

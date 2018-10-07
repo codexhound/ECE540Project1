@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Thu Oct  4 22:06:25 2018
+| Date         : Sat Oct  6 21:36:08 2018
 | Host         : LAPTOP-8RH9CDEQ running 64-bit major release  (build 9200)
 | Command      : report_methodology -file mfp_nexys4_ddr_methodology_drc_routed.rpt -pb mfp_nexys4_ddr_methodology_drc_routed.pb -rpx mfp_nexys4_ddr_methodology_drc_routed.rpx
 | Design       : mfp_nexys4_ddr
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 497
+             Violations found: 501
 +-----------+----------+------------------------------------------------+------------+
 | Rule      | Severity | Description                                    | Violations |
 +-----------+----------+------------------------------------------------+------------+
 | LUTAR-1   | Warning  | LUT drives async reset alert                   | 3          |
-| SYNTH-6   | Warning  | Timing of a block RAM might be sub-optimal     | 8          |
+| SYNTH-6   | Warning  | Timing of a block RAM might be sub-optimal     | 12         |
 | TIMING-6  | Warning  | No common primary clock between related clocks | 2          |
 | TIMING-17 | Warning  | Non-clocked sequential cell                    | 478        |
 | TIMING-18 | Warning  | Missing input or output delay                  | 6          |
@@ -89,6 +89,26 @@ Related violations: <none>
 SYNTH-6#8 Warning
 Timing of a block RAM might be sub-optimal  
 The timing for the instance mfp_sys/top/cpu/dcache/dataram/ram__data_inst7/mem_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#9 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance mfp_sys/top/cpu/icache/tagram/ram__tag_inst0/mem_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#10 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance mfp_sys/top/cpu/icache/tagram/ram__tag_inst1/mem_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#11 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance mfp_sys/top/cpu/icache/tagram/ram__tag_inst2/mem_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#12 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance mfp_sys/top/cpu/icache/tagram/ram__tag_inst3/mem_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
 Related violations: <none>
 
 TIMING-6#1 Warning
