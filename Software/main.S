@@ -43,9 +43,6 @@ LEDS_ADDR		= 0xbf800000        	# (o) LEDS Address
  
 .globl main
 main:
-   	li    $20, 0					# $20 = 1hz counter register
-   	li	 $21, 0					# $21 = 5hz counter register
-   	li	 $22, 0					# $22 = 10hz counter register
    	li	 $23, 0                         	# $23 = hundreds place counter register
    	li	 $24, 0					# $24 = tens place counter register
    	li	 $25, 0                         	# $25 = ones place counter register
@@ -61,6 +58,10 @@ main:
 	sw	  $11, 0($14)				# set display enables
 	li 	  $11, 0xFF					# Turn off all of the decimal points
 	sw	  $11, 0($17)
+
+	li    $v0, 30					#load time sys call code into v0($2)
+	syscall
+	add   $6, $0, $a0                #low bit starting time (from a0)
    
 readIO:
 	li    $3,  0						# lower digit data, reset to 0 every write
@@ -68,9 +69,14 @@ readIO:
 	lw	  $19, 0($18)       			# read buttons: $19 = button values
 	andi  $19, $19, 0xf     			# load only the lowest 4 bits ($19 stores values of UDLR Buttons)	(don't care what the others are)
 	sw    $11, 0($12)    				# write switch values to leds
-	### sw    $11, 0($16)   			# write switch values to lower 7 segment digits 
-	
-	
+	# sw    $11, 0($16)   			# write switch values to lower 7 segment digits
+
+	#get time passed in milliseconds
+	li    $v0, 30					#load time sys call code into v0($2)
+	syscall
+	add   $8, $0, $a0                #low bit check time (from a0)
+
+	subu $10, $8, $6 # low order difference = $8 - $6 //only need lower part of the difference, $10 holds the time difference in milliseconds
 	
 	#write out the current compass digits
 	add $11, $0, $23  #write hundreds value
@@ -185,7 +191,9 @@ readIO:
 	j labelskipnextstate
 	
 	labelfast:
-		beq $22, 5, labelfastcheck #has the 10hz counter reached the period
+		#has the timer reached the 10 hz period (P = .1 seconds)
+		slti $11, $10, 100 #(set $11 to 1 if time difference is less than 100)
+		bne $11, 1, labelfastcheck #goto if not equal to 1, (greater than or equal)
 		#ifnot
 		j labelskipnextstate #skip all the next state stuff, not time yet
 		
@@ -195,12 +203,16 @@ readIO:
 		j statemachinenext
 		
 	labelslow:
-		beq $20, 50, statemachinenext #check 1hz counter
+		#check 1hz counter (P = 1 seconds)
+		slti $11, $10, 1000 #(set $11 to 1 if time difference is less than 1000)
+		bne $11, 1, statemachinenext #goto if not equal to 1, (greater than or equal)
 		#an else
 		j labelskipnextstate
 		
 	labelnorm:
-		beq $21, 10, labelnormcheck #check 5 hz counter
+		#check 5 hz counter (P = .2 seconds)
+		slti $11, $10, 200 #(set $11 to 1 if time difference is less than 200)
+		bne $11, 1, statemachinenext #goto if not equal to 1, (greater than or equal)
 		#an else
 		j labelskipnextstate
 		
@@ -266,10 +278,10 @@ readIO:
 	
 	statemachinenext: #motion state machine (next state only)
 	
-	#resets all the clock counters before going to next state
-	li	 $20, 0 
-	li	 $21, 0
-	li	 $22, 0
+	#resets the clock timer (gets the starting time from syscall)
+	li    $v0, 30					#load time sys call code into v0($2)
+	syscall
+	add   $6, $0, $a0                #low bit check time (from a0)
 
 	#forward -> 0011 (3)
 	#reverse -> 1100 (12)
@@ -410,11 +422,6 @@ readIO:
 	  j labelskipnextstate
 	  
 	labelskipnextstate:
-	  
-	  #increment all the clock counters
-	  addiu $20, $20, 1      
-	  addiu $21, $21, 1
-	  addiu $22, $22, 1
 
 	beq   $0, $0, readIO 	# repeat
 	nop                  	# branch delay slot
