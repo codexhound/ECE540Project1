@@ -57,7 +57,7 @@ main:
    	li 	 $17, PORT_SEVENSEG_DP			# $17 = address of the dp points in 7 segment digits
    	li	 $18, BUTTONS_ADDR			# $18 = address of the button inputs (last 4 bits are UPLR)
    	li	 $26, 0                         	# $26 = motion state register, default to 0(idle)
-   	li 	  $11, 0xf8					# set display enable to only enable lowest 3 displays (b'11111000)
+   	li 	  $11, 0xf0					# set display enable to only enable lowest 4 displays (b'11110000)
 	sw	  $11, 0($14)				# set display enables
 	li 	  $11, 0xFF					# Turn off all of the decimal points
 	sw	  $11, 0($17)
