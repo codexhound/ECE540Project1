@@ -57,6 +57,10 @@ main:
    	li 	 $17, PORT_SEVENSEG_DP			# $17 = address of the dp points in 7 segment digits
    	li	 $18, BUTTONS_ADDR			# $18 = address of the button inputs (last 4 bits are UPLR)
    	li	 $26, 0                         	# $26 = motion state register, default to 0(idle)
+   	li 	  $11, 0xf8					# set display enable to only enable lowest 3 displays (b'11111000)
+	sw	  $11, 0($14)				# set display enables
+	li 	  $11, 0xFF					# Turn off all of the decimal points
+	sw	  $11, 0($17)
    
 readIO:
 	li    $3   0						# lower digit data, reset to 0 every write
@@ -65,10 +69,8 @@ readIO:
 	andi  $19, $19, 0xf     			# load only the lowest 4 bits ($19 stores values of UDLR Buttons)	(don't care what the others are)
 	sw    $11, 0($12)    				# write switch values to leds
 	### sw    $11, 0($16)   			# write switch values to lower 7 segment digits 
-	li 	  $11, 0x00
-	sw	  $11, 0($14)				# Enable all the displays 
-	li 	  $11, 0xFF				# Turn off all of the decimal points
-	sw	  $11, 0($17)
+	
+	
 	
 	#write out the current compass digits
 	li $11 $23  #write hundreds value

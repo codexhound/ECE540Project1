@@ -62,7 +62,7 @@ module mfp_ahb_display(
        
        if (~HRESETn) begin
          en <= 8'hff; //enable low, defaults to off
-         digits <= 0;
+         digits <= 64'hfffffffffffffffff; //all blanks
          dp <= 8'hff; 
        end else if (we)
          case (HADDR_d)
