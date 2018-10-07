@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Sat Oct  6 21:31:45 2018
+| Date         : Sat Oct  6 23:46:22 2018
 | Host         : LAPTOP-8RH9CDEQ running 64-bit major release  (build 9200)
 | Command      : report_utilization -file mfp_nexys4_ddr_utilization_synth.rpt -pb mfp_nexys4_ddr_utilization_synth.pb
 | Design       : mfp_nexys4_ddr
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 30    |          Yes |           - |          Set |
-| 154   |          Yes |           - |        Reset |
+| 70    |          Yes |           - |          Set |
+| 114   |          Yes |           - |        Reset |
 | 44    |          Yes |         Set |            - |
 | 8453  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -157,13 +157,13 @@ Table of Contents
 | LUT3     | 1281 |                 LUT |
 | LUT2     |  557 |                 LUT |
 | MUXF7    |  304 |               MuxFx |
-| FDCE     |  154 |        Flop & Latch |
 | CARRY4   |  149 |          CarryLogic |
+| FDCE     |  114 |        Flop & Latch |
 | LUT1     |   99 |                 LUT |
+| FDPE     |   70 |        Flop & Latch |
 | RAMB36E1 |   64 |        Block Memory |
 | FDSE     |   44 |        Flop & Latch |
 | OBUF     |   33 |                  IO |
-| FDPE     |   30 |        Flop & Latch |
 | RAMB18E1 |   28 |        Block Memory |
 | IBUF     |   28 |                  IO |
 | MUXF8    |   23 |               MuxFx |

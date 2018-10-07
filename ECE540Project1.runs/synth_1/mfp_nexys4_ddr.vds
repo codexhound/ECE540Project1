@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sat Oct  6 21:23:45 2018
-# Process ID: 2152
+# Start of session at: Sat Oct  6 23:38:05 2018
+# Process ID: 3396
 # Current directory: C:/Users/RampantVelcro/Documents/Class/ECE540/ECE540Project1/ECE540Project1.runs/synth_1
 # Command line: vivado.exe -log mfp_nexys4_ddr.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mfp_nexys4_ddr.tcl
 # Log file: C:/Users/RampantVelcro/Documents/Class/ECE540/ECE540Project1/ECE540Project1.runs/synth_1/mfp_nexys4_ddr.vds
@@ -15,14 +15,15 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5960 
+INFO: Helper process launched with PID 15300 
 WARNING: [Synth 8-2507] parameter declaration becomes local in debounce with formal parameter declaration list [C:/Users/RampantVelcro/Documents/Class/ECE540/ECE540Project1/ECE540Project1.srcs/sources_1/imports/Desktop/SocProject1/hdl/debounce.v:48]
+WARNING: [Synth 8-2292] literal value truncated to fit in 64 bits [C:/Users/RampantVelcro/Documents/Class/ECE540/ECE540Project1/ECE540Project1.srcs/sources_1/new/mfp_ahb_display.v:65]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 466.965 ; gain = 118.469
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 467.516 ; gain = 118.785
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'mfp_nexys4_ddr' [C:/Users/RampantVelcro/Documents/Class/ECE540/ECE540Project1/ECE540Project1.srcs/sources_1/imports/Desktop/SocGettingStarted/projGS/projGS/hardware/rtl_up/boards/nexys4_ddr/mfp_nexys4_ddr.v:17]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/RampantVelcro/Documents/Class/ECE540/ECE540Project1/ECE540Project1.runs/synth_1/.Xil/Vivado-2152-LAPTOP-8RH9CDEQ/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/RampantVelcro/Documents/Class/ECE540/ECE540Project1/ECE540Project1.runs/synth_1/.Xil/Vivado-2152-LAPTOP-8RH9CDEQ/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/RampantVelcro/Documents/Class/ECE540/ECE540Project1/ECE540Project1.runs/synth_1/.Xil/Vivado-3396-LAPTOP-8RH9CDEQ/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/RampantVelcro/Documents/Class/ECE540/ECE540Project1/ECE540Project1.runs/synth_1/.Xil/Vivado-3396-LAPTOP-8RH9CDEQ/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:19473]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
@@ -954,7 +955,7 @@ WARNING: [Synth 8-3331] design mfp_ahb_p_ram has unconnected port HADDR[31]
 WARNING: [Synth 8-3331] design mfp_ahb_p_ram has unconnected port HADDR[30]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 718.410 ; gain = 369.914
+Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 718.203 ; gain = 369.473
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -977,10 +978,10 @@ WARNING: [Synth 8-3295] tying undriven pin top:BistIn[0] to constant 0 [C:/Users
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 718.410 ; gain = 369.914
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 718.203 ; gain = 369.473
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 718.410 ; gain = 369.914
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 718.203 ; gain = 369.473
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1002,9 +1003,9 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1117.141 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1119.355 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 1117.141 ; gain = 768.645
+Finished Constraint Validation : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 1119.355 ; gain = 770.625
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
 ---------------------------------------------------------------------------------
@@ -1012,7 +1013,7 @@ Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 1117.141 ; gain = 768.645
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 1119.355 ; gain = 770.625
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -1021,7 +1022,7 @@ Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  c:/U
 Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  c:/Users/RampantVelcro/Documents/Class/ECE540/ECE540Project1/ECE540Project1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for clk_wiz_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 1117.141 ; gain = 768.645
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 1119.355 ; gain = 770.625
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "db_count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "shift_pb0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -1087,7 +1088,7 @@ INFO: [Synth 8-5544] ROM "trst_n" won't be mapped to Block RAM because address s
 INFO: [Synth 8-5544] ROM "trst_delay" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 WARNING: [Synth 8-327] inferring latch for variable 'q_reg' [C:/Users/RampantVelcro/Documents/Class/ECE540/ECE540Project1/ECE540Project1.srcs/sources_1/imports/Desktop/SocGettingStarted/projGS/projGS/hardware/rtl_up/core/mvp_latchn.v:90]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 1117.141 ; gain = 768.645
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 1119.355 ; gain = 770.625
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'mfp_sys/top/cpu/core/clock_gate/buff_fclk' (m14k_clock_buf) to 'mfp_sys/top/cpu/core/clock_gate/buff_gclk'
 INFO: [Synth 8-223] decloning instance 'mfp_sys/top/cpu/core/clock_gate/buff_fclk' (m14k_clock_buf) to 'mfp_sys/top/cpu/core/clock_gate/buff_gtlbclk'
@@ -8692,7 +8693,7 @@ INFO: [Synth 8-3333] propagating constant 1 across sequential element (corei_1/c
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (corei_1/cpz/\_cdmmbase_31_0_/cregister/cregister/q_reg[0] )
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:05:04 ; elapsed = 00:05:15 . Memory (MB): peak = 1611.898 ; gain = 1263.402
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:05:08 ; elapsed = 00:05:23 . Memory (MB): peak = 1607.238 ; gain = 1258.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -8830,13 +8831,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'clk_wiz_0/clk_out1' to pin 'clk_wiz_0/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:05:14 ; elapsed = 00:05:26 . Memory (MB): peak = 1611.898 ; gain = 1263.402
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:05:18 ; elapsed = 00:05:35 . Memory (MB): peak = 1607.238 ; gain = 1258.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:07:00 ; elapsed = 00:07:13 . Memory (MB): peak = 1611.898 ; gain = 1263.402
+Finished Timing Optimization : Time (s): cpu = 00:07:08 ; elapsed = 00:07:26 . Memory (MB): peak = 1607.238 ; gain = 1258.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -8947,7 +8948,7 @@ INFO: [Synth 8-4480] The timing for the instance mfp_sys/top/cpu/icache/tagram/r
 INFO: [Synth 8-4480] The timing for the instance mfp_sys/top/cpu/icache/tagram/ram__tag_inst3/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Common 17-14] Message 'Synth 8-4480' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:07:13 ; elapsed = 00:07:26 . Memory (MB): peak = 1611.898 ; gain = 1263.402
+Finished Technology Mapping : Time (s): cpu = 00:07:21 ; elapsed = 00:07:39 . Memory (MB): peak = 1607.238 ; gain = 1258.508
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -8975,7 +8976,7 @@ INFO: [Synth 8-6064] Net \mfp_sys/mfp_ahb_withloader/mfp_ahb/mfp_ahb_p_ram/we_ma
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:07:15 ; elapsed = 00:07:28 . Memory (MB): peak = 1611.898 ; gain = 1263.402
+Finished IO Insertion : Time (s): cpu = 00:07:24 ; elapsed = 00:07:42 . Memory (MB): peak = 1607.238 ; gain = 1258.508
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -8988,7 +8989,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:07:15 ; elapsed = 00:07:28 . Memory (MB): peak = 1611.898 ; gain = 1263.402
+Finished Renaming Generated Instances : Time (s): cpu = 00:07:24 ; elapsed = 00:07:42 . Memory (MB): peak = 1607.238 ; gain = 1258.508
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -9000,25 +9001,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:07:20 ; elapsed = 00:07:33 . Memory (MB): peak = 1611.898 ; gain = 1263.402
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:07:28 ; elapsed = 00:07:46 . Memory (MB): peak = 1607.238 ; gain = 1258.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:07:20 ; elapsed = 00:07:34 . Memory (MB): peak = 1611.898 ; gain = 1263.402
+Finished Renaming Generated Ports : Time (s): cpu = 00:07:29 ; elapsed = 00:07:47 . Memory (MB): peak = 1607.238 ; gain = 1258.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:07:21 ; elapsed = 00:07:34 . Memory (MB): peak = 1611.898 ; gain = 1263.402
+Finished Handling Custom Attributes : Time (s): cpu = 00:07:29 ; elapsed = 00:07:48 . Memory (MB): peak = 1607.238 ; gain = 1258.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:07:21 ; elapsed = 00:07:34 . Memory (MB): peak = 1611.898 ; gain = 1263.402
+Finished Renaming Generated Nets : Time (s): cpu = 00:07:30 ; elapsed = 00:07:48 . Memory (MB): peak = 1607.238 ; gain = 1258.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -9070,8 +9071,8 @@ Report Cell Usage:
 |15    |RAMB36E1   |    32|
 |16    |RAMB36E1_1 |    32|
 |17    |SRL16E     |     9|
-|18    |FDCE       |   154|
-|19    |FDPE       |    30|
+|18    |FDCE       |   114|
+|19    |FDPE       |    70|
 |20    |FDRE       |  8453|
 |21    |FDSE       |    44|
 |22    |IBUF       |    28|
@@ -10717,14 +10718,14 @@ Report Instance Areas:
 |1633  |        _udi_in_m                                                                            |mvp_cregister__parameterized1              |     1|
 +------+---------------------------------------------------------------------------------------------+-------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:07:21 ; elapsed = 00:07:35 . Memory (MB): peak = 1611.898 ; gain = 1263.402
+Finished Writing Synthesis Report : Time (s): cpu = 00:07:30 ; elapsed = 00:07:48 . Memory (MB): peak = 1607.238 ; gain = 1258.508
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 960 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:06:50 ; elapsed = 00:07:17 . Memory (MB): peak = 1611.898 ; gain = 864.672
-Synthesis Optimization Complete : Time (s): cpu = 00:07:22 ; elapsed = 00:07:35 . Memory (MB): peak = 1611.898 ; gain = 1263.402
+Synthesis Optimization Runtime : Time (s): cpu = 00:06:54 ; elapsed = 00:07:30 . Memory (MB): peak = 1607.238 ; gain = 857.355
+Synthesis Optimization Complete : Time (s): cpu = 00:07:30 ; elapsed = 00:07:49 . Memory (MB): peak = 1607.238 ; gain = 1258.508
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 596 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
@@ -10732,12 +10733,12 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM128X1S => RAM128X1S (MUXF7, RAMS64E, RAMS64E): 3 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-694 Infos, 297 Warnings, 8 Critical Warnings and 0 Errors encountered.
+694 Infos, 298 Warnings, 8 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:07:31 ; elapsed = 00:07:46 . Memory (MB): peak = 1611.898 ; gain = 1274.875
+synth_design: Time (s): cpu = 00:07:41 ; elapsed = 00:08:01 . Memory (MB): peak = 1607.238 ; gain = 1269.980
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/RampantVelcro/Documents/Class/ECE540/ECE540Project1/ECE540Project1.runs/synth_1/mfp_nexys4_ddr.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1611.898 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1607.238 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file mfp_nexys4_ddr_utilization_synth.rpt -pb mfp_nexys4_ddr_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.210 . Memory (MB): peak = 1611.898 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Oct  6 21:31:45 2018...
+report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.210 . Memory (MB): peak = 1607.238 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Oct  6 23:46:22 2018...
