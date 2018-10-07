@@ -49,7 +49,7 @@ main:
    	li	 $23, 0                         	# $23 = hundreds place counter register
    	li	 $24, 0					# $24 = tens place counter register
    	li	 $25, 0                         	# $25 = ones place counter register
-   	lui   $12, LEDS_ADDR #0xbf80    	    	# $12 = address of LEDs (0xbf800000)
+   	li   $12, LEDS_ADDR #0xbf80    	    	# $12 = address of LEDs (0xbf800000)
    	addiu $13, $12, 4    				# $13 = address of switches
    	li    $14, PORT_SEVENSEG_EN			# $14 = address of the 7 segment enable
    	li 	 $15, PORT_SEVENSEG_HGH			# $15 = address of the higher 7 segment digits
@@ -63,7 +63,7 @@ main:
 	sw	  $11, 0($17)
    
 readIO:
-	li    $3   0						# lower digit data, reset to 0 every write
+	li    $3,  0						# lower digit data, reset to 0 every write
 	lw    $10, 0($13)    				# read switches: $10 = switch values
 	lw	  $19, 0($18)       			# read buttons: $19 = button values
 	andi  $19, $19, 0xf     			# load only the lowest 4 bits ($19 stores values of UDLR Buttons)	(don't care what the others are)
@@ -73,83 +73,83 @@ readIO:
 	
 	
 	#write out the current compass digits
-	li $11 $23  #write hundreds value
-	sll $11 $11 16 #shift the data 16 bits left for digit 2 data (hundreds)
-	add $3 $11 $3 #add this to lower digit data for later write out
+	add $11, $0, $23  #write hundreds value
+	sll $11, $11, 16 #shift the data 16 bits left for digit 2 data (hundreds)
+	add $3, $11, $3 #add this to lower digit data for later write out
 
-	li $11 $24  #write tens value
-	sll $11 $11 8 #shift the data 16 bits left for digit 1 data (tens)
-	add $3 $11 $3 #add this to lower digit data for later write out
+	add $11, $0, $24  #write tens value
+	sll $11, $11, 8 #shift the data 16 bits left for digit 1 data (tens)
+	add $3, $11, $3 #add this to lower digit data for later write out
 
-	li $11 $23  #write ones value
-	add $3 $11 $3 #add this to lower digit data for later write out
+	add $11, $0, $23  #write ones value
+	add $3, $11, $3 #add this to lower digit data for later write out
 	
 	#motion state machine code (outputs only)
 	
-	bre $26 0 labelidle //start pseudo code for motion state machine, if branch state == goto label
-	bre $26 1 labela
-	bre $26 2 labelb
-	bre $26 3 labelc
-	bre $26 4 labeld
-	bre $26 5 labele
-	bre $26 6 labelf
-	bre $26 7 labelg
+	beq $26, 0, labelidle //start pseudo code for motion state machine, if branch state == goto label
+	beq $26, 1, labela
+	beq $26, 2, labelb
+	beq $26, 3, labelc
+	beq $26, 4, labeld
+	beq $26, 5, labele
+	beq $26, 6, labelf
+	beq $26, 7, labelg
 	j labelclock
 	
 	#16 = a, 17= b, 18 = c, 19 = d, 20 = e, 21 = f, 22 = g, 28 = blank
 	labelidle:
 	  	#write correct digit code to digit data
-	  	li $11 28  #write blank value
-		sll $11 $11 24 #shift the data 24 bits left for digit 3 data
-		add $3 $11 $3 #add this to lower digit data for later write out
+	  	li $11, 28  #write blank value
+		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
+		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	labela:
 	  	#write correct digit code to digit data
-	  	li $11 16  #write a value
-		sll $11 $11 24 #shift the data 24 bits left for digit 3 data
-		add $3 $11 $3 #add this to lower digit data for later write out
+	  	li $11, 16  #write a value
+		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
+		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	
 	labelb:
 	  	#write correct digit code to digit data
-	  	li $11 17  #write b value
-		sll $11 $11 24 #shift the data 24 bits left for digit 3 data
-		add $3 $11 $3 #add this to lower digit data for later write out
+	  	li $11, 17  #write b value
+		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
+		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	  
 	labelc:
 	  	#write correct digit code to digit data
-	  	li $11 18  #write c value
-		sll $11 $11 24 #shift the data 24 bits left for digit 3 data
-		add $3 $11 $3 #add this to lower digit data for later write out
+	  	li $11, 18  #write c value
+		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
+		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	  
 	labeld:
 	  	#write correct digit code to digit data
-	  	li $11 19  #write d value
-		sll $11 $11 24 #shift the data 24 bits left for digit 3 data
-		add $3 $11 $3 #add this to lower digit data for later write out
+	  	li $11, 19  #write d value
+		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
+		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	  
 	labele:
 	  	#write correct digit code to digit data
-	  	li $11 20  #write e value
-		sll $11 $11 24 #shift the data 24 bits left for digit 3 data
-		add $3 $11 $3 #add this to lower digit data for later write out
+	  	li $11, 20  #write e value
+		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
+		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	  
 	labelf:
 	  	#write correct digit code to digit data
-	  	li $11 21  #write f value
-		sll $11 $11 24 #shift the data 24 bits left for digit 3 data
-		add $3 $11 $3 #add this to lower digit data for later write out
+	  	li $11, 21  #write f value
+		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
+		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	  
 	labelg:
 	  	#write correct digit code to digit data
-	  	li $11 22  #write g value
-		sll $11 $11 24 #shift the data 24 bits left for digit 3 data
-		add $3 $11 $3 #add this to lower digit data for later write out
+	  	li $11, 22  #write g value
+		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
+		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	
 	labelclock:
@@ -169,99 +169,99 @@ readIO:
 	#clockwise fast -> 0110 (d6) (reverse right and left)
 	#counter clockwise fast -> 1001 (d9) (reverse left and right motors)
 
-	bre $19 6 labelfast #clockwise fast
-	bre $19 9 labelfast #counterclockwise fast
+	beq $19, 6, labelfast #clockwise fast
+	beq $19, 9, labelfast #counterclockwise fast
 	
-	bre $19 3 labelslow #forward
-	bre $19 12 labelslow #reverse
-	bre $19 0 labelslow #idle
-	bre $19 15 labelslow #idle
+	beq $19, 3, labelslow #forward
+	beq $19, 12, labelslow #reverse
+	beq $19, 0, labelslow #idle
+	beq $19, 15, labelslow #idle
 
-	bre $19 2 labelnorm #clockwise
-	bre $19 7 labelnorm #clockwise
-	bre $19 1 labelnorm #counter clockwise
-	bre $19 11 labelnorm #counter clockwise
+	beq $19, 2, labelnorm #clockwise
+	beq $19, 7, labelnorm #clockwise
+	beq $19, 1, labelnorm #counter clockwise
+	beq $19, 11, labelnorm #counter clockwise
 	
-	j label labelskipnextstate
+	j labelskipnextstate
 	
 	labelfast:
-		bre $22 5 labelfastcheck #has the 10hz counter reached the period
-		# else
+		beq $22, 5, labelfastcheck #has the 10hz counter reached the period
+		#ifnot
 		j labelskipnextstate #skip all the next state stuff, not time yet
 		
 	labelfastcheck:
-		bre $19 9 labelcompassdecrement #decrement in any case that robot is turning cc, increment otherwise
-		bre $19 6 labelcompassincrement
+		beq $19, 9, labelcompassdecrement #decrement in any case that robot is turning cc, increment otherwise
+		beq $19, 6, labelcompassincrement
 		j statemachinenext
 		
 	labelslow:
-		bre $20 50 statemachinenext #check 1hz counter
-		$else
+		beq $20, 50, statemachinenext #check 1hz counter
+		#an else
 		j labelskipnextstate
 		
 	labelnorm:
-		bre $21 10 labelnormcheck #check 5 hz counter
-		$else
+		beq $21, 10, labelnormcheck #check 5 hz counter
+		#an else
 		j labelskipnextstate
 		
 	labelnormcheck:
-		bre $19 1 labelcompassdecrement #decrement in any case that robot is turning cc, increment otherwise
-		bre $19 2 labelcompassincrement
-		bre $19 11 labelcompassdecrement
-		bre $19 7 labelcompassincrement
+		beq $19, 1, labelcompassdecrement #decrement in any case that robot is turning cc, increment otherwise
+		beq $19, 2, labelcompassincrement
+		beq $19, 11, labelcompassdecrement
+		beq $19, 7, labelcompassincrement
 		j statemachinenext
 		
 	labelcompassdecrement:
 		#decrement the compass counter
-		subi $25 $25 1
-		bre $25 -1 decrementtens
+		addi $25, $25, -1
+		beq $25, -1, decrementtens
 		j statemachinenext
 
 	decrementtens:
-		li $25 9
-		subi $24 $24 1
-		bre $24 -1 decrementhundreds
+		li $25, 9
+		addi $24, $24, -1
+		beq $24, -1, decrementhundreds
 		j statemachinenext
 
 	decrementhundreds:
-		li $24 9
-		subi $23 $23 1
-		bre $23 -1 resetcompasscountersdecrement
+		li $24, 9
+		addi $23, $23, -1
+		beq $23, -1, resetcompasscountersdecrement
 		j statemachinenext
 
 	resetcompasscountersdecrement:
-		li $23 3
-		li $24 5
-		li $25 9
+		li $23, 3
+		li $24, 5
+		li $25, 9
 		#set counters to 359
 		j statemachinenext
 
 	resetcompasscounters:
-		li $23 0
-		li $24 0 
-		li $25 0
+		li $23, 0
+		li $24, 0 
+		li $25, 0
 		j statemachinenext
 
 	labelcompassincrement:
 		#increment the compass counter
-		addi $25 $25 1
-		bre $25 10 incrementtens
+		addi $25, $25, 1
+		beq $25, 10, incrementtens
 		j statemachinenext
 
 	incrementtens:
-		li $25 0
-		addi $24 $24 1
-		bre $23 3 incrementtenslast #if hundreds is 3
-		bre $24 10 incrementhundreds #else if tens is 10
+		li $25, 0
+		addi $24, $24, 1
+		beq $23, 3, incrementtenslast #if hundreds is 3
+		beq $24, 10, incrementhundreds #else if tens is 10
 		j statemachinenext
 
 	incrementtenslast:
-		bre $24 6 resetcompasscounters #if hundreds is 3 and tens is 6 that means counter needs to be reset
+		beq $24, 6, resetcompasscounters #if hundreds is 3 and tens is 6 that means counter needs to be reset
 		j statemachinenext
 
 	incrementhundreds:
-		li $24 0
-		addi $23 $23 1
+		li $24, 0
+		addi $23, $23, 1
 		j statemachinenext
 	
 	statemachinenext: #motion state machine (next state only)
@@ -279,105 +279,105 @@ readIO:
 	#clockwise fast -> 0101 (d5) (reverse right and left)
 	#counter clockwise fast -> 1010 (d10) (reverse left and right motors)
 	
-	bre $26 0 labelidlenext
-	bre $26 1 labelanext
-	bre $26 2 labelbnext
-	bre $26 3 labelcnext
-	bre $26 4 labeldnext
-	bre $26 5 labelenext
-	bre $26 6 labelfnext
-	bre $26 7 labelgnext
+	beq $26, 0, labelidlenext
+	beq $26, 1, labelanext
+	beq $26, 2, labelbnext
+	beq $26, 3, labelcnext
+	beq $26, 4, labeldnext
+	beq $26, 5, labelenext
+	beq $26, 6, labelfnext
+	beq $26, 7, labelgnext
 	j labelskipnextstate
 
 	labelidlenext:
-	  bre $19 3 anext   		#forward
-	  bre $19 12 dnext   		#reverse
-	  bre $19 1 anext 			#cc
-	  bre $19 11 anext 			#cc
-	  bre $19 9 anext 			#ccf
-	  bre $19 2 anext			#cw
-	  bre $19 7 anext			#cw
-	  bre $19 6 anext			#cwf
-	  bre $19 0 gnext			#idle
-	  bre $19 15 gnext			#idle
+	  beq $19, 3, anext   		#forward
+	  beq $19, 12, dnext   		#reverse
+	  beq $19, 1, anext 			#cc
+	  beq $19, 11, anext 			#cc
+	  beq $19, 9, anext 			#ccf
+	  beq $19, 2, anext			#cw
+	  beq $19, 7, anext			#cw
+	  beq $19, 6, anext			#cwf
+	  beq $19, 0, gnext			#idle
+	  beq $19, 15, gnext			#idle
 	  j idlenext
 	  
 	labelanext:
-	  bre $19 3 idlenext		#forward		
-	  bre $19 12 idlenext	 	#reverse		
-	  bre $19 1 fnext			#cc	
-	  bre $19 11 fnext			#cc	
-	  bre $19 9 fnext			#ccf	
-	  bre $19 2 bnext			#cw	
-	  bre $19 7 bnext			#cw	
-	  bre $19 6 bnext			#cwf	
-	  bre $19 0 idlenext		#idle		
-	  bre $19 15 idlenext		#idle		
+	  beq $19, 3, idlenext		#forward		
+	  beq $19, 12, idlenext	 	#reverse		
+	  beq $19, 1, fnext			#cc	
+	  beq $19, 11, fnext			#cc	
+	  beq $19, 9, fnext			#ccf	
+	  beq $19, 2, bnext			#cw	
+	  beq $19, 7, bnext			#cw	
+	  beq $19, 6, bnext			#cwf	
+	  beq $19, 0, idlenext		#idle		
+	  beq $19, 15, idlenext		#idle		
 	  j idlenext
 	
 	labelbnext:
-	  bre $19 3 idlenext		#forward					
-	  bre $19 12 idlenext		#reverse					
-	  bre $19 1 anext			#cc			
-	  bre $19 11 anext			#cc			
-	  bre $19 9 anext			#ccf			
-	  bre $19 2 cnext			#cw			
-	  bre $19 7 cnext			#cw			
-	  bre $19 6 cnext			#cwf			
-	  bre $19 0 idlenext		#idle					
-	  bre $19 15 idlenext		#idle					
+	  beq $19, 3, idlenext		#forward					
+	  beq $19, 12, idlenext		#reverse					
+	  beq $19, 1, anext			#cc			
+	  beq $19, 11, anext			#cc			
+	  beq $19, 9, anext			#ccf			
+	  beq $19, 2, cnext			#cw			
+	  beq $19, 7, cnext			#cw			
+	  beq $19, 6, cnext			#cwf			
+	  beq $19, 0, idlenext		#idle					
+	  beq $19, 15, idlenext		#idle					
 	  j idlenext
 	  
 	labelcnext:
-	  bre $19 3 idlenext		#forward				
-	  bre $19 12 idlenext		#reverse				
-	  bre $19 1 bnext			#cc		
-	  bre $19 11 bnext			#cc		
-	  bre $19 9 bnext			#ccf		
-	  bre $19 2 dnext			#cw		
-	  bre $19 7 dnext			#cw		
-	  bre $19 6 dnext			#cwf		
-	  bre $19 0 idlenext		#idle				
-	  bre $19 15 idlenext		#idle				
+	  beq $19, 3, idlenext		#forward				
+	  beq $19, 12, idlenext		#reverse				
+	  beq $19, 1, bnext			#cc		
+	  beq $19, 11, bnext			#cc		
+	  beq $19, 9, bnext			#ccf		
+	  beq $19, 2, dnext			#cw		
+	  beq $19, 7, dnext			#cw		
+	  beq $19, 6, dnext			#cwf		
+	  beq $19, 0, idlenext		#idle				
+	  beq $19, 15, idlenext		#idle				
 	  j idlenext
 	  
-	dnextnext:
-	  bre $19 3 idlenext		#forward				
-	  bre $19 12 idlenext		#reverse				
-	  bre $19 1 cnext			#cc		
-	  bre $19 11 cnext			#cc		
-	  bre $19 9 cnext			#ccf		
-	  bre $19 2 enext			#cw		
-	  bre $19 7 enext			#cw		
-	  bre $19 6 enext			#cwf		
-	  bre $19 0 idlenext		#idle				
-	  bre $19 15 idlenext		#idle				
+	labeldnext:
+	  beq $19, 3, idlenext		#forward				
+	  beq $19, 12, idlenext		#reverse				
+	  beq $19, 1, cnext			#cc		
+	  beq $19, 11, cnext			#cc		
+	  beq $19, 9, cnext			#ccf		
+	  beq $19, 2, enext			#cw		
+	  beq $19, 7, enext			#cw		
+	  beq $19, 6, enext			#cwf		
+	  beq $19, 0, idlenext		#idle				
+	  beq $19, 15, idlenext		#idle				
 	  j idlenext
 	  
 	labelenext:
-	  bre $19 3 idlenext		#forward			
-	  bre $19 12 idlenext		#reverse			
-	  bre $19 1 dnext			#cc	
-	  bre $19 11 dnext			#cc	
-	  bre $19 9 dnext			#ccf	
-	  bre $19 2 fnext			#cw	
-	  bre $19 7 fnext			#cw	
-	  bre $19 6 fnext			#cwf	
-	  bre $19 0 idlenext		#idle			
-	  bre $19 15 idlenext		#idle			
+	  beq $19, 3, idlenext		#forward			
+	  beq $19, 12, idlenext		#reverse			
+	  beq $19, 1, dnext			#cc	
+	  beq $19, 11, dnext			#cc	
+	  beq $19, 9, dnext			#ccf	
+	  beq $19, 2, fnext			#cw	
+	  beq $19, 7, fnext			#cw	
+	  beq $19, 6, fnext			#cwf	
+	  beq $19, 0, idlenext		#idle			
+	  beq $19, 15, idlenext		#idle			
 	  j idlenext
 	  
 	labelfnext:
-	  bre $19 3 idlenext		#forward			
-	  bre $19 12 idlenext		#reverse			
-	  bre $19 1 enext			#cc	
-	  bre $19 11 enext			#cc	
-	  bre $19 9 enext			#ccf	
-	  bre $19 2 anext			#cw	
-	  bre $19 7 anext			#cw	
-	  bre $19 6 anext			#cwf	
-	  bre $19 0 idlenext		#idle			
-	  bre $19 15 idlenext		#idle			
+	  beq $19, 3, idlenext		#forward			
+	  beq $19, 12, idlenext		#reverse			
+	  beq $19, 1, enext			#cc	
+	  beq $19, 11, enext			#cc	
+	  beq $19, 9, enext			#ccf	
+	  beq $19, 2, anext			#cw	
+	  beq $19, 7, anext			#cw	
+	  beq $19, 6, anext			#cwf	
+	  beq $19, 0, idlenext		#idle			
+	  beq $19, 15, idlenext		#idle			
 	  j idlenext
 	  
 	labelgnext:
@@ -385,28 +385,28 @@ readIO:
 	
 	#set next state register
 	idlenext:
-	  li $26 0
+	  li $26, 0
 	  j labelskipnextstate
 	anext:
-	  li $26 1
-	  j labelskipnextstates
+	  li $26, 1
+	  j labelskipnextstate
 	bnext:
-	  li $26 2
+	  li $26, 2
 	  j labelskipnextstate
 	cnext:
-	  li $26 3
+	  li $26, 3
 	  j labelskipnextstate
 	dnext:
-      li $26 4
+      li $26, 4
 	  j labelskipnextstate
 	enext:
-	  li $26 5
+	  li $26, 5
 	  j labelskipnextstate
 	fnext:
-	  li $26 6
+	  li $26, 6
 	  j labelskipnextstate
 	gnext:
-	  li $26 7
+	  li $26, 7
 	  j labelskipnextstate
 	  
 	labelskipnextstate:
