@@ -51,14 +51,14 @@ module mfp_nexys4_ddr(
   assign pbtn_in[1] = BTNL;
   assign pbtn_in[0] = BTNR;
   
-  assign CA = dispout[7];
-  assign CB = dispout[6];
-  assign CC = dispout[5];
-  assign CD = dispout[4];
-  assign CE = dispout[3];
-  assign CF = dispout[2];
-  assign CG = dispout[1];
-  assign DP = dispout[0];
+  assign DP = dispout[7]; //assigning these based on mfp_ahb_sevensegdec.v
+  assign CA = dispout[6];
+  assign CB = dispout[5];
+  assign CC = dispout[4];
+  assign CD = dispout[3];
+  assign CE = dispout[2];
+  assign CF = dispout[1];
+  assign CG = dispout[0];
   
   assign AN = dispenout;
   //assign AN = dispout;
