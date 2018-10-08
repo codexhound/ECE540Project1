@@ -18,9 +18,11 @@ module testbench;
     reg                    SI_ColdReset_N;
     reg                    EJ_TMS, EJ_TCK, EJ_DINT;
     wire [`MFP_N_SW-1  :0] IO_Switch;
-    wire [          4  :0] IO_PB;
+    reg [          4  :0] IO_PB;
     wire [`MFP_N_LED-1 :0] IO_LED;
     reg                    UART_RX;
+    wire [7:0]             disenout;
+    wire [7:0]             disout;
 					
     mfp_sys sys (.SI_Reset_N(SI_Reset_N),
                  .SI_ClkIn(SI_ClkIn),
@@ -39,7 +41,9 @@ module testbench;
                  .IO_Switch(IO_Switch), 
                  .IO_PB(IO_PB), 
                  .IO_LED(IO_LED), 
-                 .UART_RX(UART_RX)
+                 .UART_RX(UART_RX),
+                 .disenout(disenout),
+                 .disout(disout)
     );
 
     initial
@@ -58,16 +62,27 @@ module testbench;
         SI_Reset_N  <= 0;
         repeat (100)  @(posedge SI_ClkIn);
         SI_Reset_N  <= 1;
-        repeat (200) @(posedge SI_ClkIn);
+        repeat (100) @(posedge SI_ClkIn);
+        IO_PB <= 3; //for
+        repeat (1000) @(posedge SI_ClkIn);
+        IO_PB <= 12; //rev
+                repeat (1000) @(posedge SI_ClkIn);
+        IO_PB <= 15; //idle
+                repeat (1000) @(posedge SI_ClkIn);
+        IO_PB <= 2; //cw
+                repeat (1000) @(posedge SI_ClkIn);
+        IO_PB <= 1; //cc
+                repeat (1000) @(posedge SI_ClkIn);
+        IO_PB <= 6; //clockwise fast
+                repeat (1000) @(posedge SI_ClkIn);
+        IO_PB <= 9; //cc fast
         $stop;
     end
-
+/*
     initial
     begin
         $dumpvars;
         $timeformat (-9, 1, "ns", 10);
     end
-    
+*/    
 endmodule
-
-

@@ -38,7 +38,7 @@ PORT_SEVENSEG_HGH	= 0x1f700004		# (o) 7 Segment Higher Display
 PORT_SEVENSEG_LOW	= 0x1f700008		# (o) 7 Segment Lower Display
 PORT_SEVENSEG_DP	= 0x1f70000C		# (o) 7 segment Decimal Point Display
 BUTTONS_ADDR 		= 0x1f800008        	# (o) Input Buttons Address
-LEDS_ADDR		= 0xbf800000        	# (o) LEDS Address
+LEDS_ADDR		= 0x1f800000        	# (o) LEDS Address
  
  
 .globl main
