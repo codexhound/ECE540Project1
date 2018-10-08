@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Sun Oct  7 21:46:18 2018
+| Date         : Mon Oct  8 11:58:47 2018
 | Host         : LAPTOP-8RH9CDEQ running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file mfp_nexys4_ddr_timing_summary_routed.rpt -pb mfp_nexys4_ddr_timing_summary_routed.pb -rpx mfp_nexys4_ddr_timing_summary_routed.rpx -warn_on_violation
 | Design       : mfp_nexys4_ddr

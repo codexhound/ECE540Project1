@@ -41,7 +41,7 @@ PORT_SEVENSEG_DP	= 0x1f70000C		# (o) 7 segment Decimal Point Display
  
 .globl main
 main:
-   lui   $12, 0xbf80    				# $12 = address of LEDs (0xbf800000)
+   lui   $12, 0x1f80    				# $12 = address of LEDs (0xbf800000)
    addiu $13, $12, 4    				# $13 = address of switches
    li    $14, PORT_SEVENSEG_EN			# $14 = address of the 7 segment enable
    li 	 $15, PORT_SEVENSEG_HGH			# $15 = address of the higher 7 segment digits

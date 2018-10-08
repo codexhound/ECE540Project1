@@ -33,16 +33,19 @@
  * the addresses of your peripherals 
  */
 
-PORT_SEVENSEG_EN 	= 0x1f700000		# (o) 7 Segment enable
-PORT_SEVENSEG_HGH	= 0x1f700004		# (o) 7 Segment Higher Display
-PORT_SEVENSEG_LOW	= 0x1f700008		# (o) 7 Segment Lower Display
-PORT_SEVENSEG_DP	= 0x1f70000C		# (o) 7 segment Decimal Point Display
-BUTTONS_ADDR 		= 0x1f800008        	# (o) Input Buttons Address
-LEDS_ADDR		= 0x1f800000        	# (o) LEDS Address
+PORT_SEVENSEG_EN 	= 0xbf700000		# (o) 7 Segment enable
+PORT_SEVENSEG_HGH	= 0xbf700004		# (o) 7 Segment Higher Display
+PORT_SEVENSEG_LOW	= 0xbf700008		# (o) 7 Segment Lower Display
+PORT_SEVENSEG_DP	= 0xbf70000C		# (o) 7 segment Decimal Point Display
+BUTTONS_ADDR 		= 0xbf800008        	# (o) Input Buttons Address
+LEDS_ADDR		= 0xbf800000        	# (o) LEDS Address
  
  
 .globl main
 main:
+	li   $20, 0                    #1hz counter
+	li   $21, 0                    #5hz counter
+	li   $22, 0                    #10hz counter
    	li	 $23, 0                         	# $23 = hundreds place counter register
    	li	 $24, 0					# $24 = tens place counter register
    	li	 $25, 0                         	# $25 = ones place counter register
@@ -59,24 +62,28 @@ main:
 	li 	  $11, 0xFF					# Turn off all of the decimal points
 	sw	  $11, 0($17)
 
-	li    $v0, 30					#load time sys call code into v0($2)
-	syscall
-	add   $6, $0, $a0                #low bit starting time (from a0)
+	li $4, 0xf4240 					#slow period
+	li $5, 0x30d40 					#norm period
+	li $6, 0x186a0 					#fast period
+
+	#li    $v0, 30					#load time sys call code into v0($2)
+	#syscall
+	#add   $6, $0, $a0                #low bit starting time (from a0)
    
 readIO:
 	li    $3,  0						# lower digit data, reset to 0 every write
-	lw    $10, 0($13)    				# read switches: $10 = switch values
+	lw    $11, 0($13)    				# read switches: $10 = switch values
 	lw	  $19, 0($18)       			# read buttons: $19 = button values
 	andi  $19, $19, 0xf     			# load only the lowest 4 bits ($19 stores values of UDLR Buttons)	(don't care what the others are)
 	sw    $11, 0($12)    				# write switch values to leds
 	# sw    $11, 0($16)   			# write switch values to lower 7 segment digits
 
 	#get time passed in milliseconds
-	li    $v0, 30					#load time sys call code into v0($2)
-	syscall
-	add   $8, $0, $a0                #low bit check time (from a0)
+	#li    $v0, 30					#load time sys call code into v0($2)
+	#syscall
+	#add   $8, $0, $a0                #low bit check time (from a0)
 
-	subu $10, $8, $6 # low order difference = $8 - $6 //only need lower part of the difference, $10 holds the time difference in milliseconds
+	#subu $10, $8, $6 # low order difference = $8 - $6 //only need lower part of the difference, $10 holds the time difference in milliseconds
 	
 	#write out the current compass digits
 	add $11, $0, $23  #write hundreds value
@@ -84,10 +91,10 @@ readIO:
 	add $3, $11, $3 #add this to lower digit data for later write out
 
 	add $11, $0, $24  #write tens value
-	sll $11, $11, 8 #shift the data 16 bits left for digit 1 data (tens)
+	sll $11, $11, 8 #shift the data 8 bits left for digit 1 data (tens)
 	add $3, $11, $3 #add this to lower digit data for later write out
 
-	add $11, $0, $23  #write ones value
+	add $11, $0, $25  #write ones value
 	add $3, $11, $3 #add this to lower digit data for later write out
 	
 	#motion state machine code (outputs only)
@@ -170,10 +177,13 @@ readIO:
 	#forward -> 0011 (3)
 	#reverse -> 1100 (12)
 	#idle -> 0000 (0) or 1111 (15)
-	#clockwise -> 0010 (d2) or 0111 (d7) (reverseright motor, right motor and left motor on)
-	#counterclockwise -> 0001 (d1) or 1011 (d11) (reverse left motor, left motor and right on)
+	#clockwise -> 0010 (d2) or 0111 (d7) or 0100(4) or 1110(14)
+	#counterclockwise -> 0001 (d1) or 1011 (d11) or 1000(8) or 1101(13)
 	#clockwise fast -> 0110 (d6) (reverse right and left)
 	#counter clockwise fast -> 1001 (d9) (reverse left and right motors)
+
+	#0100 reverse right = clockwise
+	#1000 reverse left = counter clockwise
 
 	beq $19, 6, labelfast #clockwise fast
 	beq $19, 9, labelfast #counterclockwise fast
@@ -185,15 +195,22 @@ readIO:
 
 	beq $19, 2, labelnorm #clockwise
 	beq $19, 7, labelnorm #clockwise
+	beq $19, 4, labelnorm #clockwise
+	beq $19, 14, labelnorm #clockwise
 	beq $19, 1, labelnorm #counter clockwise
 	beq $19, 11, labelnorm #counter clockwise
+	beq $19, 8, labelnorm #counter clockwise
+	beq $19, 13, labelnorm #counter clockwise
 	
 	j labelskipnextstate
-	
+
+
+
 	labelfast:
 		#has the timer reached the 10 hz period (P = .1 seconds)
-		slti $11, $10, 100 #(set $11 to 1 if time difference is less than 100)
+		slt $11, $22, $6 #(set $11 to 1 if time difference is less than 100)
 		bne $11, 1, labelfastcheck #goto if not equal to 1, (greater than or equal)
+		#beq $22, 100000, labelfastcheck
 		#ifnot
 		j labelskipnextstate #skip all the next state stuff, not time yet
 		
@@ -204,15 +221,17 @@ readIO:
 		
 	labelslow:
 		#check 1hz counter (P = 1 seconds)
-		slti $11, $10, 1000 #(set $11 to 1 if time difference is less than 1000)
+		slt $11, $20, $4 #(set $11 to 1 if time difference is less than 1000)
 		bne $11, 1, statemachinenext #goto if not equal to 1, (greater than or equal)
+		#beq $20, 750000, statemachinenext
 		#an else
 		j labelskipnextstate
 		
 	labelnorm:
 		#check 5 hz counter (P = .2 seconds)
-		slti $11, $10, 200 #(set $11 to 1 if time difference is less than 200)
-		bne $11, 1, statemachinenext #goto if not equal to 1, (greater than or equal)
+		slt $11, $21, $5 #(set $11 to 1 if time difference is less than 200)
+		bne $11, 1, labelnormcheck #goto if not equal to 1, (greater than or equal)
+		#beq $21, 100000, labelnormcheck
 		#an else
 		j labelskipnextstate
 		
@@ -221,6 +240,10 @@ readIO:
 		beq $19, 2, labelcompassincrement
 		beq $19, 11, labelcompassdecrement
 		beq $19, 7, labelcompassincrement
+		beq $19, 4, labelcompassincrement #clockwise
+		beq $19, 14, labelcompassincrement #clockwise
+		beq $19, 8, labelcompassdecrement #counter clockwise
+		beq $19, 13, labelcompassdecrement #counter clockwise
 		j statemachinenext
 		
 	labelcompassdecrement:
@@ -279,9 +302,14 @@ readIO:
 	statemachinenext: #motion state machine (next state only)
 	
 	#resets the clock timer (gets the starting time from syscall)
-	li    $v0, 30					#load time sys call code into v0($2)
-	syscall
-	add   $6, $0, $a0                #low bit check time (from a0)
+	#li    $v0, 30					#load time sys call code into v0($2)
+	#syscall
+	#add   $6, $0, $a0                #low bit check time (from a0)
+
+	#reset the timers
+	li $20, 0
+	li $21, 0
+	li $22, 0
 
 	#forward -> 0011 (3)
 	#reverse -> 1100 (12)
@@ -301,14 +329,20 @@ readIO:
 	beq $26, 7, labelgnext
 	j labelskipnextstate
 
+
 	labelidlenext:
 	  beq $19, 3, anext   		#forward
 	  beq $19, 12, dnext   		#reverse
 	  beq $19, 1, anext 			#cc
 	  beq $19, 11, anext 			#cc
+	  beq $19, 4, anext 			#cc
+	  beq $19, 14, anext 			#cc
+
 	  beq $19, 9, anext 			#ccf
 	  beq $19, 2, anext			#cw
 	  beq $19, 7, anext			#cw
+	  beq $19, 8, anext			#cw
+	  beq $19, 13, anext			#cw
 	  beq $19, 6, anext			#cwf
 	  beq $19, 0, gnext			#idle
 	  beq $19, 15, gnext			#idle
@@ -319,9 +353,13 @@ readIO:
 	  beq $19, 12, idlenext	 	#reverse		
 	  beq $19, 1, fnext			#cc	
 	  beq $19, 11, fnext			#cc	
+	  beq $19, 4, fnext 			#cc
+	  beq $19, 14, fnext 			#cc
 	  beq $19, 9, fnext			#ccf	
 	  beq $19, 2, bnext			#cw	
 	  beq $19, 7, bnext			#cw	
+	  beq $19, 8, bnext			#cw
+	  beq $19, 13, bnext			#cw
 	  beq $19, 6, bnext			#cwf	
 	  beq $19, 0, idlenext		#idle		
 	  beq $19, 15, idlenext		#idle		
@@ -331,10 +369,14 @@ readIO:
 	  beq $19, 3, idlenext		#forward					
 	  beq $19, 12, idlenext		#reverse					
 	  beq $19, 1, anext			#cc			
-	  beq $19, 11, anext			#cc			
+	  beq $19, 11, anext			#cc
+	  beq $19, 4, anext 			#cc
+	  beq $19, 14, anext 			#cc
 	  beq $19, 9, anext			#ccf			
 	  beq $19, 2, cnext			#cw			
-	  beq $19, 7, cnext			#cw			
+	  beq $19, 7, cnext			#cw
+	  beq $19, 8, cnext			#cw
+	  beq $19, 13, cnext			#cw
 	  beq $19, 6, cnext			#cwf			
 	  beq $19, 0, idlenext		#idle					
 	  beq $19, 15, idlenext		#idle					
@@ -345,9 +387,13 @@ readIO:
 	  beq $19, 12, idlenext		#reverse				
 	  beq $19, 1, bnext			#cc		
 	  beq $19, 11, bnext			#cc		
+	  beq $19, 4, bnext 			#cc
+	  beq $19, 14, bnext 			#cc
 	  beq $19, 9, bnext			#ccf		
 	  beq $19, 2, dnext			#cw		
 	  beq $19, 7, dnext			#cw		
+	  beq $19, 8, dnext			#cw
+	  beq $19, 13, dnext			#cw
 	  beq $19, 6, dnext			#cwf		
 	  beq $19, 0, idlenext		#idle				
 	  beq $19, 15, idlenext		#idle				
@@ -357,10 +403,14 @@ readIO:
 	  beq $19, 3, idlenext		#forward				
 	  beq $19, 12, idlenext		#reverse				
 	  beq $19, 1, cnext			#cc		
-	  beq $19, 11, cnext			#cc		
+	  beq $19, 11, cnext			#cc
+	  beq $19, 4, cnext 			#cc
+	  beq $19, 14, cnext 			#cc
 	  beq $19, 9, cnext			#ccf		
 	  beq $19, 2, enext			#cw		
 	  beq $19, 7, enext			#cw		
+	  beq $19, 8, enext			#cw
+	  beq $19, 13, enext			#cw
 	  beq $19, 6, enext			#cwf		
 	  beq $19, 0, idlenext		#idle				
 	  beq $19, 15, idlenext		#idle				
@@ -371,9 +421,13 @@ readIO:
 	  beq $19, 12, idlenext		#reverse			
 	  beq $19, 1, dnext			#cc	
 	  beq $19, 11, dnext			#cc	
+	  beq $19, 4, dnext 			#cc
+	  beq $19, 14, dnext 			#cc
 	  beq $19, 9, dnext			#ccf	
 	  beq $19, 2, fnext			#cw	
 	  beq $19, 7, fnext			#cw	
+	  beq $19, 8, fnext			#cw
+	  beq $19, 13, fnext			#cw
 	  beq $19, 6, fnext			#cwf	
 	  beq $19, 0, idlenext		#idle			
 	  beq $19, 15, idlenext		#idle			
@@ -384,9 +438,13 @@ readIO:
 	  beq $19, 12, idlenext		#reverse			
 	  beq $19, 1, enext			#cc	
 	  beq $19, 11, enext			#cc	
+	  beq $19, 4, enext 			#cc
+	  beq $19, 14, enext 			#cc
 	  beq $19, 9, enext			#ccf	
 	  beq $19, 2, anext			#cw	
 	  beq $19, 7, anext			#cw	
+	  beq $19, 8, anext			#cw
+	  beq $19, 13, anext			#cw
 	  beq $19, 6, anext			#cwf	
 	  beq $19, 0, idlenext		#idle			
 	  beq $19, 15, idlenext		#idle			
@@ -422,6 +480,10 @@ readIO:
 	  j labelskipnextstate
 	  
 	labelskipnextstate:
+	#increment the clock timers
+	add $20, 1
+	add $21, 1
+	add $22, 1
 
 	beq   $0, $0, readIO 	# repeat
 	nop                  	# branch delay slot
