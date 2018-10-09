@@ -1,42 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1539024349">
   <File Type="BITSTR-BMM" Name="mfp_nexys4_ddr_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="mfp_nexys4_ddr_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="mfp_nexys4_ddr_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR" Name="mfp_nexys4_ddr_power_routed.rpt"/>
   <File Type="PA-TCL" Name="mfp_nexys4_ddr.tcl"/>
-  <File Type="OPT-TIMING" Name="mfp_nexys4_ddr_timing_summary_opted.rpt"/>
   <File Type="OPT-DCP" Name="mfp_nexys4_ddr_opt.dcp"/>
   <File Type="ROUTE-PWR-SUM" Name="mfp_nexys4_ddr_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="mfp_nexys4_ddr_reports.tcl"/>
   <File Type="OPT-DRC" Name="mfp_nexys4_ddr_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="mfp_nexys4_ddr.hwdef"/>
   <File Type="PWROPT-DCP" Name="mfp_nexys4_ddr_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="mfp_nexys4_ddr_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="mfp_nexys4_ddr_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="mfp_nexys4_ddr_placed.dcp"/>
   <File Type="PLACE-IO" Name="mfp_nexys4_ddr_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="mfp_nexys4_ddr_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="mfp_nexys4_ddr_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="mfp_nexys4_ddr_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="mfp_nexys4_ddr_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="mfp_nexys4_ddr_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="mfp_nexys4_ddr_incremental_reuse_pre_placed.rpt"/>
   <File Type="BG-BGN" Name="mfp_nexys4_ddr.bgn"/>
-  <File Type="PLACE-TIMING" Name="mfp_nexys4_ddr_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="mfp_nexys4_ddr_postplace_pwropt.dcp"/>
   <File Type="BG-BIN" Name="mfp_nexys4_ddr.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="mfp_nexys4_ddr_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="mfp_nexys4_ddr_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="mfp_nexys4_ddr_drc_physopted.rpt"/>
   <File Type="BITSTR-MSK" Name="mfp_nexys4_ddr.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="mfp_nexys4_ddr_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="mfp_nexys4_ddr_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="mfp_nexys4_ddr_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="mfp_nexys4_ddr_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="mfp_nexys4_ddr_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="mfp_nexys4_ddr_drc_routed.pb"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="mfp_nexys4_ddr.ltx"/>
   <File Type="ROUTE-DRC-RPX" Name="mfp_nexys4_ddr_drc_routed.rpx"/>
   <File Type="BITSTR-MMI" Name="mfp_nexys4_ddr.mmi"/>
@@ -50,24 +38,17 @@
   <File Type="ROUTE-TIMINGSUMMARY" Name="mfp_nexys4_ddr_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="mfp_nexys4_ddr_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="mfp_nexys4_ddr_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="mfp_nexys4_ddr_incremental_reuse_routed.rpt"/>
+  <File Type="RDI-RDI" Name="mfp_nexys4_ddr.vdi"/>
   <File Type="ROUTE-CLK" Name="mfp_nexys4_ddr_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="mfp_nexys4_ddr_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="mfp_nexys4_ddr_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="mfp_nexys4_ddr_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="mfp_nexys4_ddr_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="mfp_nexys4_ddr_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="mfp_nexys4_ddr_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="mfp_nexys4_ddr_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="mfp_nexys4_ddr_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="mfp_nexys4_ddr_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="mfp_nexys4_ddr_bus_skew_postroute_physopted.pb"/>
   <File Type="BG-BIT" Name="mfp_nexys4_ddr.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="mfp_nexys4_ddr_bus_skew_postroute_physopted.rpx"/>
   <File Type="BITSTR-RBT" Name="mfp_nexys4_ddr.rbt"/>
   <File Type="BITSTR-NKY" Name="mfp_nexys4_ddr.nky"/>
   <File Type="BG-DRC" Name="mfp_nexys4_ddr.drc"/>
-  <File Type="RDI-RDI" Name="mfp_nexys4_ddr.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>

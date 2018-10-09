@@ -192,6 +192,8 @@ readIO:
 	beq $19, 12, labelslow #reverse
 	beq $19, 0, labelslow #idle
 	beq $19, 15, labelslow #idle
+	beq $19, 10, labelslow #idle
+	beq $19, 5, labelslow #idle
 
 	beq $19, 2, labelnorm #clockwise
 	beq $19, 7, labelnorm #clockwise
@@ -346,19 +348,21 @@ readIO:
 	  beq $19, 6, anext			#cwf
 	  beq $19, 0, gnext			#idle
 	  beq $19, 15, gnext			#idle
+	  beq $19, 10, gnext #idle
+	  beq $19, 5, gnext #idle
 	  j idlenext
 	  
 	labelanext:
 	  beq $19, 3, idlenext		#forward		
 	  beq $19, 12, idlenext	 	#reverse		
-	  beq $19, 1, fnext			#cc	
+	  beq $19, 1, fnext			#cc
 	  beq $19, 11, fnext			#cc	
-	  beq $19, 4, fnext 			#cc
+	  beq $19, 4, bnext 			#cw
 	  beq $19, 14, fnext 			#cc
 	  beq $19, 9, fnext			#ccf	
 	  beq $19, 2, bnext			#cw	
 	  beq $19, 7, bnext			#cw	
-	  beq $19, 8, bnext			#cw
+	  beq $19, 8, fnext			#cw
 	  beq $19, 13, bnext			#cw
 	  beq $19, 6, bnext			#cwf	
 	  beq $19, 0, idlenext		#idle		
@@ -368,14 +372,14 @@ readIO:
 	labelbnext:
 	  beq $19, 3, idlenext		#forward					
 	  beq $19, 12, idlenext		#reverse					
-	  beq $19, 1, anext			#cc			
+	  beq $19, 1, anext			#cc
 	  beq $19, 11, anext			#cc
-	  beq $19, 4, anext 			#cc
+	  beq $19, 4, cnext 			#cw
 	  beq $19, 14, anext 			#cc
 	  beq $19, 9, anext			#ccf			
 	  beq $19, 2, cnext			#cw			
 	  beq $19, 7, cnext			#cw
-	  beq $19, 8, cnext			#cw
+	  beq $19, 8, anext			#cw
 	  beq $19, 13, cnext			#cw
 	  beq $19, 6, cnext			#cwf			
 	  beq $19, 0, idlenext		#idle					
@@ -385,14 +389,14 @@ readIO:
 	labelcnext:
 	  beq $19, 3, idlenext		#forward				
 	  beq $19, 12, idlenext		#reverse				
-	  beq $19, 1, bnext			#cc		
+	  beq $19, 1, bnext			#cw
 	  beq $19, 11, bnext			#cc		
-	  beq $19, 4, bnext 			#cc
+	  beq $19, 4, dnext 			#cw
 	  beq $19, 14, bnext 			#cc
 	  beq $19, 9, bnext			#ccf		
 	  beq $19, 2, dnext			#cw		
 	  beq $19, 7, dnext			#cw		
-	  beq $19, 8, dnext			#cw
+	  beq $19, 8, bnext			#cc
 	  beq $19, 13, dnext			#cw
 	  beq $19, 6, dnext			#cwf		
 	  beq $19, 0, idlenext		#idle				
@@ -402,14 +406,14 @@ readIO:
 	labeldnext:
 	  beq $19, 3, idlenext		#forward				
 	  beq $19, 12, idlenext		#reverse				
-	  beq $19, 1, cnext			#cc		
+	  beq $19, 1, cnext			#cc
 	  beq $19, 11, cnext			#cc
-	  beq $19, 4, cnext 			#cc
+	  beq $19, 4, enext 			#cw
 	  beq $19, 14, cnext 			#cc
 	  beq $19, 9, cnext			#ccf		
 	  beq $19, 2, enext			#cw		
 	  beq $19, 7, enext			#cw		
-	  beq $19, 8, enext			#cw
+	  beq $19, 8, cnext			#cc
 	  beq $19, 13, enext			#cw
 	  beq $19, 6, enext			#cwf		
 	  beq $19, 0, idlenext		#idle				
@@ -419,14 +423,14 @@ readIO:
 	labelenext:
 	  beq $19, 3, idlenext		#forward			
 	  beq $19, 12, idlenext		#reverse			
-	  beq $19, 1, dnext			#cc	
+	  beq $19, 1, dnext			#cc
 	  beq $19, 11, dnext			#cc	
-	  beq $19, 4, dnext 			#cc
+	  beq $19, 4, fnext 			#cw
 	  beq $19, 14, dnext 			#cc
 	  beq $19, 9, dnext			#ccf	
 	  beq $19, 2, fnext			#cw	
 	  beq $19, 7, fnext			#cw	
-	  beq $19, 8, fnext			#cw
+	  beq $19, 8, dnext			#cc
 	  beq $19, 13, fnext			#cw
 	  beq $19, 6, fnext			#cwf	
 	  beq $19, 0, idlenext		#idle			
@@ -436,14 +440,14 @@ readIO:
 	labelfnext:
 	  beq $19, 3, idlenext		#forward			
 	  beq $19, 12, idlenext		#reverse			
-	  beq $19, 1, enext			#cc	
+	  beq $19, 1, enext			#cc
 	  beq $19, 11, enext			#cc	
-	  beq $19, 4, enext 			#cc
+	  beq $19, 4, anext 			#cw
 	  beq $19, 14, enext 			#cc
 	  beq $19, 9, enext			#ccf	
 	  beq $19, 2, anext			#cw	
 	  beq $19, 7, anext			#cw	
-	  beq $19, 8, anext			#cw
+	  beq $19, 8, enext			#cc
 	  beq $19, 13, anext			#cw
 	  beq $19, 6, anext			#cwf	
 	  beq $19, 0, idlenext		#idle			
