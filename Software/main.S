@@ -37,15 +37,19 @@ PORT_SEVENSEG_EN 	= 0xbf700000		# (o) 7 Segment enable
 PORT_SEVENSEG_HGH	= 0xbf700004		# (o) 7 Segment Higher Display
 PORT_SEVENSEG_LOW	= 0xbf700008		# (o) 7 Segment Lower Display
 PORT_SEVENSEG_DP	= 0xbf70000C		# (o) 7 segment Decimal Point Display
-BUTTONS_ADDR 		= 0xbf800008        	# (o) Input Buttons Address
-LEDS_ADDR		= 0xbf800000        	# (o) LEDS Address
+BUTTONS_ADDR 		= 0xbf800008        # (o) Input Buttons Address
+LEDS_ADDR		    = 0xbf800000        # (o) LEDS Address
+SYSCLOCK_ADDR		= 0xbe800000        # (o) SYSCLOCK Address
  
  
 .globl main
 main:
-	li   $20, 0                    #1hz counter
-	li   $21, 0                    #5hz counter
-	li   $22, 0                    #10hz counter
+	#li   $20, 0                    #1hz counter
+	#li   $21, 0                    #5hz counter
+	#li   $22, 0                    #10hz counter
+	li   $20, SYSCLOCK_ADDR         #$20 = SYSCLOCK_ADDR
+	lw   $21, 0($20)         		#$21 = Starting Time Register
+	add  $22, $0, $21         		#$22 = Check Time / End Time Register
    	li	 $23, 0                         	# $23 = hundreds place counter register
    	li	 $24, 0					# $24 = tens place counter register
    	li	 $25, 0                         	# $25 = ones place counter register
@@ -62,9 +66,13 @@ main:
 	li 	  $11, 0xFF					# Turn off all of the decimal points
 	sw	  $11, 0($17)
 
-	li $4, 0xf4240 					#slow period
-	li $5, 0x30d40 					#norm period
-	li $6, 0x186a0 					#fast period
+	#li $4, 0xf4240 					#slow period (1000000 loops)
+	#li $5, 0x30d40 					#norm period (200000 loops)
+	#li $6, 0x186a0 					#fast period (100000 loops)
+
+	li $4, 0x3e8 					#slow period (1000 ms)
+	li $5, 0xc8 					#norm period (200 ms)
+	li $6, 0x64 					#fast period (100 ms)
 
 	#li    $v0, 30					#load time sys call code into v0($2)
 	#syscall
@@ -77,6 +85,7 @@ readIO:
 	andi  $19, $19, 0xf     			# load only the lowest 4 bits ($19 stores values of UDLR Buttons)	(don't care what the others are)
 	sw    $11, 0($12)    				# write switch values to leds
 	# sw    $11, 0($16)   			# write switch values to lower 7 segment digits
+	lw   $22, 0($20)                    #load current time in milliseconds
 
 	#get time passed in milliseconds
 	#li    $v0, 30					#load time sys call code into v0($2)
@@ -185,6 +194,8 @@ readIO:
 	#0100 reverse right = clockwise
 	#1000 reverse left = counter clockwise
 
+	sub $7, $22, $21     #find the time difference
+
 	beq $19, 6, labelfast #clockwise fast
 	beq $19, 9, labelfast #counterclockwise fast
 	
@@ -210,7 +221,9 @@ readIO:
 
 	labelfast:
 		#has the timer reached the 10 hz period (P = .1 seconds)
-		slt $11, $22, $6 #(set $11 to 1 if time difference is less than 100)
+		#slt $11, $22, $6 #(set $11 to 1 if time difference is less than 100)
+		#bne $11, 1, labelfastcheck #goto if not equal to 1, (greater than or equal)
+		slt $11, $7, $6 #(set $11 to 1 if time difference is less than 100)
 		bne $11, 1, labelfastcheck #goto if not equal to 1, (greater than or equal)
 		#beq $22, 100000, labelfastcheck
 		#ifnot
@@ -223,16 +236,20 @@ readIO:
 		
 	labelslow:
 		#check 1hz counter (P = 1 seconds)
-		slt $11, $20, $4 #(set $11 to 1 if time difference is less than 1000)
-		bne $11, 1, statemachinenext #goto if not equal to 1, (greater than or equal)
+		#slt $11, $20, $4 #(set $11 to 1 if time difference is less than 1000)
+		#bne $11, 1, statemachinenext #goto if not equal to 1, (greater than or equal)
+		slt $11, $7, $4 #(set $11 to 1 if time difference is less than 100)
+		bne $11, 1, labelfastcheck #goto if not equal to 1, (greater than or equal)
 		#beq $20, 750000, statemachinenext
 		#an else
 		j labelskipnextstate
 		
 	labelnorm:
 		#check 5 hz counter (P = .2 seconds)
-		slt $11, $21, $5 #(set $11 to 1 if time difference is less than 200)
-		bne $11, 1, labelnormcheck #goto if not equal to 1, (greater than or equal)
+		#slt $11, $21, $5 #(set $11 to 1 if time difference is less than 200)
+		#bne $11, 1, labelnormcheck #goto if not equal to 1, (greater than or equal)
+		slt $11, $7, $5 #(set $11 to 1 if time difference is less than 100)
+		bne $11, 1, labelfastcheck #goto if not equal to 1, (greater than or equal)
 		#beq $21, 100000, labelnormcheck
 		#an else
 		j labelskipnextstate
@@ -309,9 +326,11 @@ readIO:
 	#add   $6, $0, $a0                #low bit check time (from a0)
 
 	#reset the timers
-	li $20, 0
-	li $21, 0
-	li $22, 0
+	#li $20, 0
+	#li $21, 0
+	#li $22, 0
+
+	add  $21, $0, $22			#reset the timer
 
 	#forward -> 0011 (3)
 	#reverse -> 1100 (12)
@@ -485,9 +504,9 @@ readIO:
 	  
 	labelskipnextstate:
 	#increment the clock timers
-	add $20, 1
-	add $21, 1
-	add $22, 1
+	#add $20, 1
+	#add $21, 1
+	#add $22, 1
 
 	beq   $0, $0, readIO 	# repeat
 	nop                  	# branch delay slot
