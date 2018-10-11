@@ -239,7 +239,7 @@ readIO:
 		#slt $11, $20, $4 #(set $11 to 1 if time difference is less than 1000)
 		#bne $11, 1, statemachinenext #goto if not equal to 1, (greater than or equal)
 		slt $11, $7, $4 #(set $11 to 1 if time difference is less than 100)
-		bne $11, 1, labelfastcheck #goto if not equal to 1, (greater than or equal)
+		bne $11, 1, statemachinenext #goto if not equal to 1, (greater than or equal)
 		#beq $20, 750000, statemachinenext
 		#an else
 		j labelskipnextstate
@@ -249,7 +249,7 @@ readIO:
 		#slt $11, $21, $5 #(set $11 to 1 if time difference is less than 200)
 		#bne $11, 1, labelnormcheck #goto if not equal to 1, (greater than or equal)
 		slt $11, $7, $5 #(set $11 to 1 if time difference is less than 100)
-		bne $11, 1, labelfastcheck #goto if not equal to 1, (greater than or equal)
+		bne $11, 1, labelnormcheck #goto if not equal to 1, (greater than or equal)
 		#beq $21, 100000, labelnormcheck
 		#an else
 		j labelskipnextstate

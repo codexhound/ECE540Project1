@@ -679,7 +679,7 @@ C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:241
 80000484:	00e4582a 	slt	t3,a3,a0
 C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:242
 80000488:	24010001 	li	at,1
-8000048c:	1561fff5 	bne	t3,at,80000464 <labelfastcheck>
+8000048c:	15610057 	bne	t3,at,800005ec <statemachinenext>
 80000490:	00000000 	nop
 C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:245
 80000494:	080002d9 	j	80000b64 <labelskipnextstate>
@@ -690,7 +690,7 @@ C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:251
 8000049c:	00e5582a 	slt	t3,a3,a1
 C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:252
 800004a0:	24010001 	li	at,1
-800004a4:	1561ffef 	bne	t3,at,80000464 <labelfastcheck>
+800004a4:	15610003 	bne	t3,at,800004b4 <labelnormcheck>
 800004a8:	00000000 	nop
 C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:255
 800004ac:	080002d9 	j	80000b64 <labelskipnextstate>
