@@ -88,7 +88,7 @@ readIO:
 	
 	#motion state machine code (outputs only)
 	
-	beq $26, 0, labelidle //start pseudo code for motion state machine, if branch state == goto label
+	beq $26, 0, labelidle //start code for motion state machine, if branch state == goto label
 	beq $26, 1, labela
 	beq $26, 2, labelb
 	beq $26, 3, labelc
@@ -102,60 +102,47 @@ readIO:
 	labelidle:
 	  	#write correct digit code to digit data
 	  	li $11, 28  #write blank value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	labela:
 	  	#write correct digit code to digit data
 	  	li $11, 16  #write a value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	
 	labelb:
 	  	#write correct digit code to digit data
 	  	li $11, 17  #write b value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	  
 	labelc:
 	  	#write correct digit code to digit data
 	  	li $11, 18  #write c value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	  
 	labeld:
 	  	#write correct digit code to digit data
 	  	li $11, 19  #write d value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	  
 	labele:
 	  	#write correct digit code to digit data
 	  	li $11, 20  #write e value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	  
 	labelf:
 	  	#write correct digit code to digit data
 	  	li $11, 21  #write f value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	  
 	labelg:
 	  	#write correct digit code to digit data
 	  	li $11, 22  #write g value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	
 	labelclock:
 	
+	sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
+	add $3, $11, $3 #add this to lower digit data for later write out
+
 	#write the digit data to the digit address
 	sw	  $3, 0($16) 
 	
