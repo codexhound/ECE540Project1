@@ -397,955 +397,955 @@ C:\Users\RampantVelcro\Desktop\SocProject1\software/dummy.S:59
 80000200:	00000000 	nop
 
 80000204 <main>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:50
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:46
 80000204:	3c14be80 	lui	s4,0xbe80
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:51
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:47
 80000208:	8e950000 	lw	s5,0(s4)
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:52
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:48
 8000020c:	0015b020 	add	s6,zero,s5
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:53
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:49
 80000210:	24170000 	li	s7,0
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:54
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:50
 80000214:	24180000 	li	t8,0
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:55
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:51
 80000218:	24190000 	li	t9,0
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:56
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:52
 8000021c:	3c0cbf80 	lui	t4,0xbf80
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:57
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:53
 80000220:	258d0004 	addiu	t5,t4,4
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:58
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:54
 80000224:	3c0ebf70 	lui	t6,0xbf70
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:59
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:55
 80000228:	3c0fbf70 	lui	t7,0xbf70
 8000022c:	35ef0004 	ori	t7,t7,0x4
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:60
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:56
 80000230:	3c10bf70 	lui	s0,0xbf70
 80000234:	36100008 	ori	s0,s0,0x8
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:61
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:57
 80000238:	3c11bf70 	lui	s1,0xbf70
 8000023c:	3631000c 	ori	s1,s1,0xc
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:62
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:58
 80000240:	3c12bf80 	lui	s2,0xbf80
 80000244:	36520008 	ori	s2,s2,0x8
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:63
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:59
 80000248:	241a0000 	li	k0,0
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:64
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:60
 8000024c:	240b00f0 	li	t3,240
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:65
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:61
 80000250:	adcb0000 	sw	t3,0(t6)
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:66
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:62
 80000254:	240b00ff 	li	t3,255
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:67
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:63
 80000258:	ae2b0000 	sw	t3,0(s1)
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:73
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:65
 8000025c:	240403e8 	li	a0,1000
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:74
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:66
 80000260:	240500c8 	li	a1,200
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:75
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:67
 80000264:	24060064 	li	a2,100
 
 80000268 <readIO>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:82
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:70
 80000268:	24030000 	li	v1,0
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:83
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:71
 8000026c:	8dab0000 	lw	t3,0(t5)
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:84
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:72
 80000270:	8e530000 	lw	s3,0(s2)
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:85
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:73
 80000274:	3273000f 	andi	s3,s3,0xf
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:86
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:74
 80000278:	ad8b0000 	sw	t3,0(t4)
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:88
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:75
 8000027c:	8e960000 	lw	s6,0(s4)
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:98
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:78
 80000280:	00175820 	add	t3,zero,s7
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:99
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:79
 80000284:	000b5c00 	sll	t3,t3,0x10
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:100
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:80
 80000288:	01631820 	add	v1,t3,v1
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:102
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:82
 8000028c:	00185820 	add	t3,zero,t8
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:103
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:83
 80000290:	000b5a00 	sll	t3,t3,0x8
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:104
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:84
 80000294:	01631820 	add	v1,t3,v1
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:106
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:86
 80000298:	00195820 	add	t3,zero,t9
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:111
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:91
 8000029c:	13400018 	beqz	k0,80000300 <labelidle>
 800002a0:	01631820 	add	v1,t3,v1
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:112
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:92
 800002a4:	24010001 	li	at,1
 800002a8:	13410019 	beq	k0,at,80000310 <labela>
 800002ac:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:113
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:93
 800002b0:	24010002 	li	at,2
 800002b4:	1341001a 	beq	k0,at,80000320 <labelb>
 800002b8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:114
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:94
 800002bc:	24010003 	li	at,3
 800002c0:	1341001b 	beq	k0,at,80000330 <labelc>
 800002c4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:115
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:95
 800002c8:	24010004 	li	at,4
 800002cc:	1341001c 	beq	k0,at,80000340 <labeld>
 800002d0:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:116
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:96
 800002d4:	24010005 	li	at,5
 800002d8:	1341001d 	beq	k0,at,80000350 <labele>
 800002dc:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:117
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:97
 800002e0:	24010006 	li	at,6
 800002e4:	1341001e 	beq	k0,at,80000360 <labelf>
 800002e8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:118
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:98
 800002ec:	24010007 	li	at,7
 800002f0:	1341001f 	beq	k0,at,80000370 <labelg>
 800002f4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:119
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:99
 800002f8:	080000e0 	j	80000380 <labelclock>
 800002fc:	00000000 	nop
 
 80000300 <labelidle>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:124
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:104
 80000300:	240b001c 	li	t3,28
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:125
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:105
 80000304:	000b5e00 	sll	t3,t3,0x18
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:127
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:107
 80000308:	080000e0 	j	80000380 <labelclock>
 8000030c:	01631820 	add	v1,t3,v1
 
 80000310 <labela>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:130
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:110
 80000310:	240b0010 	li	t3,16
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:131
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:111
 80000314:	000b5e00 	sll	t3,t3,0x18
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:133
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:113
 80000318:	080000e0 	j	80000380 <labelclock>
 8000031c:	01631820 	add	v1,t3,v1
 
 80000320 <labelb>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:137
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:117
 80000320:	240b0011 	li	t3,17
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:138
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:118
 80000324:	000b5e00 	sll	t3,t3,0x18
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:140
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:120
 80000328:	080000e0 	j	80000380 <labelclock>
 8000032c:	01631820 	add	v1,t3,v1
 
 80000330 <labelc>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:144
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:124
 80000330:	240b0012 	li	t3,18
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:145
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:125
 80000334:	000b5e00 	sll	t3,t3,0x18
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:147
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:127
 80000338:	080000e0 	j	80000380 <labelclock>
 8000033c:	01631820 	add	v1,t3,v1
 
 80000340 <labeld>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:151
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:131
 80000340:	240b0013 	li	t3,19
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:152
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:132
 80000344:	000b5e00 	sll	t3,t3,0x18
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:154
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:134
 80000348:	080000e0 	j	80000380 <labelclock>
 8000034c:	01631820 	add	v1,t3,v1
 
 80000350 <labele>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:158
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:138
 80000350:	240b0014 	li	t3,20
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:159
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:139
 80000354:	000b5e00 	sll	t3,t3,0x18
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:161
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:141
 80000358:	080000e0 	j	80000380 <labelclock>
 8000035c:	01631820 	add	v1,t3,v1
 
 80000360 <labelf>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:165
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:145
 80000360:	240b0015 	li	t3,21
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:166
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:146
 80000364:	000b5e00 	sll	t3,t3,0x18
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:168
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:148
 80000368:	080000e0 	j	80000380 <labelclock>
 8000036c:	01631820 	add	v1,t3,v1
 
 80000370 <labelg>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:172
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:152
 80000370:	240b0016 	li	t3,22
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:173
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:153
 80000374:	000b5e00 	sll	t3,t3,0x18
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:175
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:155
 80000378:	080000e0 	j	80000380 <labelclock>
 8000037c:	01631820 	add	v1,t3,v1
 
 80000380 <labelclock>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:180
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:160
 80000380:	ae030000 	sw	v1,0(s0)
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:197
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:177
 80000384:	02d53822 	sub	a3,s6,s5
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:199
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:179
 80000388:	24010006 	li	at,6
 8000038c:	1261002f 	beq	s3,at,8000044c <labelfast>
 80000390:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:200
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:180
 80000394:	24010009 	li	at,9
 80000398:	1261002c 	beq	s3,at,8000044c <labelfast>
 8000039c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:202
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:182
 800003a0:	24010003 	li	at,3
 800003a4:	12610037 	beq	s3,at,80000484 <labelslow>
 800003a8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:203
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:183
 800003ac:	2401000c 	li	at,12
 800003b0:	12610034 	beq	s3,at,80000484 <labelslow>
 800003b4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:204
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:184
 800003b8:	12600032 	beqz	s3,80000484 <labelslow>
 800003bc:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:205
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:185
 800003c0:	2401000f 	li	at,15
 800003c4:	1261002f 	beq	s3,at,80000484 <labelslow>
 800003c8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:206
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:186
 800003cc:	2401000a 	li	at,10
 800003d0:	1261002c 	beq	s3,at,80000484 <labelslow>
 800003d4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:207
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:187
 800003d8:	24010005 	li	at,5
 800003dc:	12610029 	beq	s3,at,80000484 <labelslow>
 800003e0:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:209
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:189
 800003e4:	24010002 	li	at,2
 800003e8:	1261002c 	beq	s3,at,8000049c <labelnorm>
 800003ec:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:210
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:190
 800003f0:	24010007 	li	at,7
 800003f4:	12610029 	beq	s3,at,8000049c <labelnorm>
 800003f8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:211
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:191
 800003fc:	24010004 	li	at,4
 80000400:	12610026 	beq	s3,at,8000049c <labelnorm>
 80000404:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:212
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:192
 80000408:	2401000e 	li	at,14
 8000040c:	12610023 	beq	s3,at,8000049c <labelnorm>
 80000410:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:213
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:193
 80000414:	24010001 	li	at,1
 80000418:	12610020 	beq	s3,at,8000049c <labelnorm>
 8000041c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:214
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:194
 80000420:	2401000b 	li	at,11
 80000424:	1261001d 	beq	s3,at,8000049c <labelnorm>
 80000428:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:215
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:195
 8000042c:	24010008 	li	at,8
 80000430:	1261001a 	beq	s3,at,8000049c <labelnorm>
 80000434:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:216
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:196
 80000438:	2401000d 	li	at,13
 8000043c:	12610017 	beq	s3,at,8000049c <labelnorm>
 80000440:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:218
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:198
 80000444:	080002d9 	j	80000b64 <labelskipnextstate>
 80000448:	00000000 	nop
 
 8000044c <labelfast>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:226
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:201
 8000044c:	00e6582a 	slt	t3,a3,a2
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:227
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:202
 80000450:	24010001 	li	at,1
 80000454:	15610003 	bne	t3,at,80000464 <labelfastcheck>
 80000458:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:230
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:204
 8000045c:	080002d9 	j	80000b64 <labelskipnextstate>
 80000460:	00000000 	nop
 
 80000464 <labelfastcheck>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:233
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:207
 80000464:	24010009 	li	at,9
 80000468:	1261002c 	beq	s3,at,8000051c <labelcompassdecrement>
 8000046c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:234
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:208
 80000470:	24010006 	li	at,6
 80000474:	12610045 	beq	s3,at,8000058c <labelcompassincrement>
 80000478:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:235
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:209
 8000047c:	0800017b 	j	800005ec <statemachinenext>
 80000480:	00000000 	nop
 
 80000484 <labelslow>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:241
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:212
 80000484:	00e4582a 	slt	t3,a3,a0
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:242
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:213
 80000488:	24010001 	li	at,1
 8000048c:	15610057 	bne	t3,at,800005ec <statemachinenext>
 80000490:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:245
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:215
 80000494:	080002d9 	j	80000b64 <labelskipnextstate>
 80000498:	00000000 	nop
 
 8000049c <labelnorm>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:251
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:218
 8000049c:	00e5582a 	slt	t3,a3,a1
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:252
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:219
 800004a0:	24010001 	li	at,1
 800004a4:	15610003 	bne	t3,at,800004b4 <labelnormcheck>
 800004a8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:255
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:221
 800004ac:	080002d9 	j	80000b64 <labelskipnextstate>
 800004b0:	00000000 	nop
 
 800004b4 <labelnormcheck>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:258
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:224
 800004b4:	24010001 	li	at,1
 800004b8:	12610018 	beq	s3,at,8000051c <labelcompassdecrement>
 800004bc:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:259
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:225
 800004c0:	24010002 	li	at,2
 800004c4:	12610031 	beq	s3,at,8000058c <labelcompassincrement>
 800004c8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:260
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:226
 800004cc:	2401000b 	li	at,11
 800004d0:	12610012 	beq	s3,at,8000051c <labelcompassdecrement>
 800004d4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:261
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:227
 800004d8:	24010007 	li	at,7
 800004dc:	1261002b 	beq	s3,at,8000058c <labelcompassincrement>
 800004e0:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:262
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:228
 800004e4:	24010004 	li	at,4
 800004e8:	12610028 	beq	s3,at,8000058c <labelcompassincrement>
 800004ec:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:263
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:229
 800004f0:	2401000e 	li	at,14
 800004f4:	12610025 	beq	s3,at,8000058c <labelcompassincrement>
 800004f8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:264
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:230
 800004fc:	24010008 	li	at,8
 80000500:	12610006 	beq	s3,at,8000051c <labelcompassdecrement>
 80000504:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:265
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:231
 80000508:	2401000d 	li	at,13
 8000050c:	12610003 	beq	s3,at,8000051c <labelcompassdecrement>
 80000510:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:266
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:232
 80000514:	0800017b 	j	800005ec <statemachinenext>
 80000518:	00000000 	nop
 
 8000051c <labelcompassdecrement>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:270
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:236
 8000051c:	2339ffff 	addi	t9,t9,-1
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:271
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:237
 80000520:	2401ffff 	li	at,-1
 80000524:	13210003 	beq	t9,at,80000534 <decrementtens>
 80000528:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:272
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:238
 8000052c:	0800017b 	j	800005ec <statemachinenext>
 80000530:	00000000 	nop
 
 80000534 <decrementtens>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:275
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:241
 80000534:	24190009 	li	t9,9
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:276
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:242
 80000538:	2318ffff 	addi	t8,t8,-1
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:277
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:243
 8000053c:	2401ffff 	li	at,-1
 80000540:	13010003 	beq	t8,at,80000550 <decrementhundreds>
 80000544:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:278
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:244
 80000548:	0800017b 	j	800005ec <statemachinenext>
 8000054c:	00000000 	nop
 
 80000550 <decrementhundreds>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:281
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:247
 80000550:	24180009 	li	t8,9
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:282
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:248
 80000554:	22f7ffff 	addi	s7,s7,-1
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:283
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:249
 80000558:	2401ffff 	li	at,-1
 8000055c:	12e10003 	beq	s7,at,8000056c <resetcompasscountersdecrement>
 80000560:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:284
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:250
 80000564:	0800017b 	j	800005ec <statemachinenext>
 80000568:	00000000 	nop
 
 8000056c <resetcompasscountersdecrement>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:287
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:253
 8000056c:	24170003 	li	s7,3
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:288
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:254
 80000570:	24180005 	li	t8,5
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:291
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:257
 80000574:	0800017b 	j	800005ec <statemachinenext>
 80000578:	24190009 	li	t9,9
 
 8000057c <resetcompasscounters>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:294
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:260
 8000057c:	24170000 	li	s7,0
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:295
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:261
 80000580:	24180000 	li	t8,0
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:297
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:263
 80000584:	0800017b 	j	800005ec <statemachinenext>
 80000588:	24190000 	li	t9,0
 
 8000058c <labelcompassincrement>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:301
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:267
 8000058c:	23390001 	addi	t9,t9,1
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:302
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:268
 80000590:	2401000a 	li	at,10
 80000594:	13210003 	beq	t9,at,800005a4 <incrementtens>
 80000598:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:303
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:269
 8000059c:	0800017b 	j	800005ec <statemachinenext>
 800005a0:	00000000 	nop
 
 800005a4 <incrementtens>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:306
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:272
 800005a4:	24190000 	li	t9,0
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:307
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:273
 800005a8:	23180001 	addi	t8,t8,1
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:308
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:274
 800005ac:	24010003 	li	at,3
 800005b0:	12e10006 	beq	s7,at,800005cc <incrementtenslast>
 800005b4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:309
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:275
 800005b8:	2401000a 	li	at,10
 800005bc:	13010008 	beq	t8,at,800005e0 <incrementhundreds>
 800005c0:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:310
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:276
 800005c4:	0800017b 	j	800005ec <statemachinenext>
 800005c8:	00000000 	nop
 
 800005cc <incrementtenslast>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:313
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:279
 800005cc:	24010006 	li	at,6
 800005d0:	1301ffea 	beq	t8,at,8000057c <resetcompasscounters>
 800005d4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:314
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:280
 800005d8:	0800017b 	j	800005ec <statemachinenext>
 800005dc:	00000000 	nop
 
 800005e0 <incrementhundreds>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:317
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:283
 800005e0:	24180000 	li	t8,0
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:319
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:285
 800005e4:	0800017b 	j	800005ec <statemachinenext>
 800005e8:	22f70001 	addi	s7,s7,1
 
 800005ec <statemachinenext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:343
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:299
 800005ec:	13400018 	beqz	k0,80000650 <labelidlenext>
 800005f0:	0016a820 	add	s5,zero,s6
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:344
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:300
 800005f4:	24010001 	li	at,1
 800005f8:	13410046 	beq	k0,at,80000714 <labelanext>
 800005fc:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:345
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:301
 80000600:	24010002 	li	at,2
 80000604:	1341006e 	beq	k0,at,800007c0 <labelbnext>
 80000608:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:346
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:302
 8000060c:	24010003 	li	at,3
 80000610:	13410096 	beq	k0,at,8000086c <labelcnext>
 80000614:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:347
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:303
 80000618:	24010004 	li	at,4
 8000061c:	134100be 	beq	k0,at,80000918 <labeldnext>
 80000620:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:348
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:304
 80000624:	24010005 	li	at,5
 80000628:	134100e6 	beq	k0,at,800009c4 <labelenext>
 8000062c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:349
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:305
 80000630:	24010006 	li	at,6
 80000634:	1341010e 	beq	k0,at,80000a70 <labelfnext>
 80000638:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:350
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:306
 8000063c:	24010007 	li	at,7
 80000640:	13410136 	beq	k0,at,80000b1c <labelgnext>
 80000644:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:351
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:307
 80000648:	080002d9 	j	80000b64 <labelskipnextstate>
 8000064c:	00000000 	nop
 
 80000650 <labelidlenext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:355
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:310
 80000650:	24010003 	li	at,3
 80000654:	12610135 	beq	s3,at,80000b2c <anext>
 80000658:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:356
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:311
 8000065c:	2401000c 	li	at,12
 80000660:	12610138 	beq	s3,at,80000b44 <dnext>
 80000664:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:357
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:312
 80000668:	24010001 	li	at,1
 8000066c:	1261012f 	beq	s3,at,80000b2c <anext>
 80000670:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:358
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:313
 80000674:	2401000b 	li	at,11
 80000678:	1261012c 	beq	s3,at,80000b2c <anext>
 8000067c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:359
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:314
 80000680:	24010004 	li	at,4
 80000684:	12610129 	beq	s3,at,80000b2c <anext>
 80000688:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:360
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:315
 8000068c:	2401000e 	li	at,14
 80000690:	12610126 	beq	s3,at,80000b2c <anext>
 80000694:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:362
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:316
 80000698:	24010009 	li	at,9
 8000069c:	12610123 	beq	s3,at,80000b2c <anext>
 800006a0:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:363
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:317
 800006a4:	24010002 	li	at,2
 800006a8:	12610120 	beq	s3,at,80000b2c <anext>
 800006ac:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:364
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:318
 800006b0:	24010007 	li	at,7
 800006b4:	1261011d 	beq	s3,at,80000b2c <anext>
 800006b8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:365
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:319
 800006bc:	24010008 	li	at,8
 800006c0:	1261011a 	beq	s3,at,80000b2c <anext>
 800006c4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:366
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:320
 800006c8:	2401000d 	li	at,13
 800006cc:	12610117 	beq	s3,at,80000b2c <anext>
 800006d0:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:367
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:321
 800006d4:	24010006 	li	at,6
 800006d8:	12610114 	beq	s3,at,80000b2c <anext>
 800006dc:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:368
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:322
 800006e0:	1260011e 	beqz	s3,80000b5c <gnext>
 800006e4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:369
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:323
 800006e8:	2401000f 	li	at,15
 800006ec:	1261011b 	beq	s3,at,80000b5c <gnext>
 800006f0:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:370
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:324
 800006f4:	2401000a 	li	at,10
 800006f8:	12610118 	beq	s3,at,80000b5c <gnext>
 800006fc:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:371
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:325
 80000700:	24010005 	li	at,5
 80000704:	12610115 	beq	s3,at,80000b5c <gnext>
 80000708:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:372
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:326
 8000070c:	080002c9 	j	80000b24 <idlenext>
 80000710:	00000000 	nop
 
 80000714 <labelanext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:375
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:329
 80000714:	24010003 	li	at,3
 80000718:	12610102 	beq	s3,at,80000b24 <idlenext>
 8000071c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:376
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:330
 80000720:	2401000c 	li	at,12
 80000724:	126100ff 	beq	s3,at,80000b24 <idlenext>
 80000728:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:377
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:331
 8000072c:	24010001 	li	at,1
 80000730:	12610108 	beq	s3,at,80000b54 <fnext>
 80000734:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:378
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:332
 80000738:	2401000b 	li	at,11
 8000073c:	12610105 	beq	s3,at,80000b54 <fnext>
 80000740:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:379
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:333
 80000744:	24010004 	li	at,4
 80000748:	126100fa 	beq	s3,at,80000b34 <bnext>
 8000074c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:380
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:334
 80000750:	2401000e 	li	at,14
 80000754:	126100ff 	beq	s3,at,80000b54 <fnext>
 80000758:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:381
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:335
 8000075c:	24010009 	li	at,9
 80000760:	126100fc 	beq	s3,at,80000b54 <fnext>
 80000764:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:382
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:336
 80000768:	24010002 	li	at,2
 8000076c:	126100f1 	beq	s3,at,80000b34 <bnext>
 80000770:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:383
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:337
 80000774:	24010007 	li	at,7
 80000778:	126100ee 	beq	s3,at,80000b34 <bnext>
 8000077c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:384
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:338
 80000780:	24010008 	li	at,8
 80000784:	126100f3 	beq	s3,at,80000b54 <fnext>
 80000788:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:385
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:339
 8000078c:	2401000d 	li	at,13
 80000790:	126100e8 	beq	s3,at,80000b34 <bnext>
 80000794:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:386
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:340
 80000798:	24010006 	li	at,6
 8000079c:	126100e5 	beq	s3,at,80000b34 <bnext>
 800007a0:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:387
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:341
 800007a4:	126000df 	beqz	s3,80000b24 <idlenext>
 800007a8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:388
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:342
 800007ac:	2401000f 	li	at,15
 800007b0:	126100dc 	beq	s3,at,80000b24 <idlenext>
 800007b4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:389
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:343
 800007b8:	080002c9 	j	80000b24 <idlenext>
 800007bc:	00000000 	nop
 
 800007c0 <labelbnext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:392
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:346
 800007c0:	24010003 	li	at,3
 800007c4:	126100d7 	beq	s3,at,80000b24 <idlenext>
 800007c8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:393
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:347
 800007cc:	2401000c 	li	at,12
 800007d0:	126100d4 	beq	s3,at,80000b24 <idlenext>
 800007d4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:394
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:348
 800007d8:	24010001 	li	at,1
 800007dc:	126100d3 	beq	s3,at,80000b2c <anext>
 800007e0:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:395
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:349
 800007e4:	2401000b 	li	at,11
 800007e8:	126100d0 	beq	s3,at,80000b2c <anext>
 800007ec:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:396
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:350
 800007f0:	24010004 	li	at,4
 800007f4:	126100d1 	beq	s3,at,80000b3c <cnext>
 800007f8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:397
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:351
 800007fc:	2401000e 	li	at,14
 80000800:	126100ca 	beq	s3,at,80000b2c <anext>
 80000804:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:398
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:352
 80000808:	24010009 	li	at,9
 8000080c:	126100c7 	beq	s3,at,80000b2c <anext>
 80000810:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:399
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:353
 80000814:	24010002 	li	at,2
 80000818:	126100c8 	beq	s3,at,80000b3c <cnext>
 8000081c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:400
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:354
 80000820:	24010007 	li	at,7
 80000824:	126100c5 	beq	s3,at,80000b3c <cnext>
 80000828:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:401
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:355
 8000082c:	24010008 	li	at,8
 80000830:	126100be 	beq	s3,at,80000b2c <anext>
 80000834:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:402
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:356
 80000838:	2401000d 	li	at,13
 8000083c:	126100bf 	beq	s3,at,80000b3c <cnext>
 80000840:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:403
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:357
 80000844:	24010006 	li	at,6
 80000848:	126100bc 	beq	s3,at,80000b3c <cnext>
 8000084c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:404
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:358
 80000850:	126000b4 	beqz	s3,80000b24 <idlenext>
 80000854:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:405
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:359
 80000858:	2401000f 	li	at,15
 8000085c:	126100b1 	beq	s3,at,80000b24 <idlenext>
 80000860:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:406
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:360
 80000864:	080002c9 	j	80000b24 <idlenext>
 80000868:	00000000 	nop
 
 8000086c <labelcnext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:409
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:363
 8000086c:	24010003 	li	at,3
 80000870:	126100ac 	beq	s3,at,80000b24 <idlenext>
 80000874:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:410
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:364
 80000878:	2401000c 	li	at,12
 8000087c:	126100a9 	beq	s3,at,80000b24 <idlenext>
 80000880:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:411
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:365
 80000884:	24010001 	li	at,1
 80000888:	126100aa 	beq	s3,at,80000b34 <bnext>
 8000088c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:412
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:366
 80000890:	2401000b 	li	at,11
 80000894:	126100a7 	beq	s3,at,80000b34 <bnext>
 80000898:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:413
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:367
 8000089c:	24010004 	li	at,4
 800008a0:	126100a8 	beq	s3,at,80000b44 <dnext>
 800008a4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:414
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:368
 800008a8:	2401000e 	li	at,14
 800008ac:	126100a1 	beq	s3,at,80000b34 <bnext>
 800008b0:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:415
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:369
 800008b4:	24010009 	li	at,9
 800008b8:	1261009e 	beq	s3,at,80000b34 <bnext>
 800008bc:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:416
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:370
 800008c0:	24010002 	li	at,2
 800008c4:	1261009f 	beq	s3,at,80000b44 <dnext>
 800008c8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:417
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:371
 800008cc:	24010007 	li	at,7
 800008d0:	1261009c 	beq	s3,at,80000b44 <dnext>
 800008d4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:418
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:372
 800008d8:	24010008 	li	at,8
 800008dc:	12610095 	beq	s3,at,80000b34 <bnext>
 800008e0:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:419
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:373
 800008e4:	2401000d 	li	at,13
 800008e8:	12610096 	beq	s3,at,80000b44 <dnext>
 800008ec:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:420
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:374
 800008f0:	24010006 	li	at,6
 800008f4:	12610093 	beq	s3,at,80000b44 <dnext>
 800008f8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:421
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:375
 800008fc:	12600089 	beqz	s3,80000b24 <idlenext>
 80000900:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:422
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:376
 80000904:	2401000f 	li	at,15
 80000908:	12610086 	beq	s3,at,80000b24 <idlenext>
 8000090c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:423
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:377
 80000910:	080002c9 	j	80000b24 <idlenext>
 80000914:	00000000 	nop
 
 80000918 <labeldnext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:426
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:380
 80000918:	24010003 	li	at,3
 8000091c:	12610081 	beq	s3,at,80000b24 <idlenext>
 80000920:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:427
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:381
 80000924:	2401000c 	li	at,12
 80000928:	1261007e 	beq	s3,at,80000b24 <idlenext>
 8000092c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:428
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:382
 80000930:	24010001 	li	at,1
 80000934:	12610081 	beq	s3,at,80000b3c <cnext>
 80000938:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:429
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:383
 8000093c:	2401000b 	li	at,11
 80000940:	1261007e 	beq	s3,at,80000b3c <cnext>
 80000944:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:430
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:384
 80000948:	24010004 	li	at,4
 8000094c:	1261007f 	beq	s3,at,80000b4c <enext>
 80000950:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:431
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:385
 80000954:	2401000e 	li	at,14
 80000958:	12610078 	beq	s3,at,80000b3c <cnext>
 8000095c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:432
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:386
 80000960:	24010009 	li	at,9
 80000964:	12610075 	beq	s3,at,80000b3c <cnext>
 80000968:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:433
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:387
 8000096c:	24010002 	li	at,2
 80000970:	12610076 	beq	s3,at,80000b4c <enext>
 80000974:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:434
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:388
 80000978:	24010007 	li	at,7
 8000097c:	12610073 	beq	s3,at,80000b4c <enext>
 80000980:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:435
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:389
 80000984:	24010008 	li	at,8
 80000988:	1261006c 	beq	s3,at,80000b3c <cnext>
 8000098c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:436
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:390
 80000990:	2401000d 	li	at,13
 80000994:	1261006d 	beq	s3,at,80000b4c <enext>
 80000998:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:437
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:391
 8000099c:	24010006 	li	at,6
 800009a0:	1261006a 	beq	s3,at,80000b4c <enext>
 800009a4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:438
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:392
 800009a8:	1260005e 	beqz	s3,80000b24 <idlenext>
 800009ac:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:439
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:393
 800009b0:	2401000f 	li	at,15
 800009b4:	1261005b 	beq	s3,at,80000b24 <idlenext>
 800009b8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:440
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:394
 800009bc:	080002c9 	j	80000b24 <idlenext>
 800009c0:	00000000 	nop
 
 800009c4 <labelenext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:443
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:397
 800009c4:	24010003 	li	at,3
 800009c8:	12610056 	beq	s3,at,80000b24 <idlenext>
 800009cc:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:444
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:398
 800009d0:	2401000c 	li	at,12
 800009d4:	12610053 	beq	s3,at,80000b24 <idlenext>
 800009d8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:445
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:399
 800009dc:	24010001 	li	at,1
 800009e0:	12610058 	beq	s3,at,80000b44 <dnext>
 800009e4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:446
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:400
 800009e8:	2401000b 	li	at,11
 800009ec:	12610055 	beq	s3,at,80000b44 <dnext>
 800009f0:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:447
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:401
 800009f4:	24010004 	li	at,4
 800009f8:	12610056 	beq	s3,at,80000b54 <fnext>
 800009fc:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:448
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:402
 80000a00:	2401000e 	li	at,14
 80000a04:	1261004f 	beq	s3,at,80000b44 <dnext>
 80000a08:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:449
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:403
 80000a0c:	24010009 	li	at,9
 80000a10:	1261004c 	beq	s3,at,80000b44 <dnext>
 80000a14:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:450
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:404
 80000a18:	24010002 	li	at,2
 80000a1c:	1261004d 	beq	s3,at,80000b54 <fnext>
 80000a20:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:451
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:405
 80000a24:	24010007 	li	at,7
 80000a28:	1261004a 	beq	s3,at,80000b54 <fnext>
 80000a2c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:452
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:406
 80000a30:	24010008 	li	at,8
 80000a34:	12610043 	beq	s3,at,80000b44 <dnext>
 80000a38:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:453
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:407
 80000a3c:	2401000d 	li	at,13
 80000a40:	12610044 	beq	s3,at,80000b54 <fnext>
 80000a44:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:454
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:408
 80000a48:	24010006 	li	at,6
 80000a4c:	12610041 	beq	s3,at,80000b54 <fnext>
 80000a50:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:455
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:409
 80000a54:	12600033 	beqz	s3,80000b24 <idlenext>
 80000a58:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:456
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:410
 80000a5c:	2401000f 	li	at,15
 80000a60:	12610030 	beq	s3,at,80000b24 <idlenext>
 80000a64:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:457
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:411
 80000a68:	080002c9 	j	80000b24 <idlenext>
 80000a6c:	00000000 	nop
 
 80000a70 <labelfnext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:460
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:414
 80000a70:	24010003 	li	at,3
 80000a74:	1261002b 	beq	s3,at,80000b24 <idlenext>
 80000a78:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:461
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:415
 80000a7c:	2401000c 	li	at,12
 80000a80:	12610028 	beq	s3,at,80000b24 <idlenext>
 80000a84:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:462
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:416
 80000a88:	24010001 	li	at,1
 80000a8c:	1261002f 	beq	s3,at,80000b4c <enext>
 80000a90:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:463
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:417
 80000a94:	2401000b 	li	at,11
 80000a98:	1261002c 	beq	s3,at,80000b4c <enext>
 80000a9c:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:464
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:418
 80000aa0:	24010004 	li	at,4
 80000aa4:	12610021 	beq	s3,at,80000b2c <anext>
 80000aa8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:465
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:419
 80000aac:	2401000e 	li	at,14
 80000ab0:	12610026 	beq	s3,at,80000b4c <enext>
 80000ab4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:466
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:420
 80000ab8:	24010009 	li	at,9
 80000abc:	12610023 	beq	s3,at,80000b4c <enext>
 80000ac0:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:467
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:421
 80000ac4:	24010002 	li	at,2
 80000ac8:	12610018 	beq	s3,at,80000b2c <anext>
 80000acc:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:468
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:422
 80000ad0:	24010007 	li	at,7
 80000ad4:	12610015 	beq	s3,at,80000b2c <anext>
 80000ad8:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:469
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:423
 80000adc:	24010008 	li	at,8
 80000ae0:	1261001a 	beq	s3,at,80000b4c <enext>
 80000ae4:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:470
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:424
 80000ae8:	2401000d 	li	at,13
 80000aec:	1261000f 	beq	s3,at,80000b2c <anext>
 80000af0:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:471
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:425
 80000af4:	24010006 	li	at,6
 80000af8:	1261000c 	beq	s3,at,80000b2c <anext>
 80000afc:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:472
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:426
 80000b00:	12600008 	beqz	s3,80000b24 <idlenext>
 80000b04:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:473
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:427
 80000b08:	2401000f 	li	at,15
 80000b0c:	12610005 	beq	s3,at,80000b24 <idlenext>
 80000b10:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:474
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:428
 80000b14:	080002c9 	j	80000b24 <idlenext>
 80000b18:	00000000 	nop
 
 80000b1c <labelgnext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:477
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:431
 80000b1c:	080002c9 	j	80000b24 <idlenext>
 80000b20:	00000000 	nop
 
 80000b24 <idlenext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:482
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:436
 80000b24:	080002d9 	j	80000b64 <labelskipnextstate>
 80000b28:	241a0000 	li	k0,0
 
 80000b2c <anext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:485
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:439
 80000b2c:	080002d9 	j	80000b64 <labelskipnextstate>
 80000b30:	241a0001 	li	k0,1
 
 80000b34 <bnext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:488
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:442
 80000b34:	080002d9 	j	80000b64 <labelskipnextstate>
 80000b38:	241a0002 	li	k0,2
 
 80000b3c <cnext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:491
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:445
 80000b3c:	080002d9 	j	80000b64 <labelskipnextstate>
 80000b40:	241a0003 	li	k0,3
 
 80000b44 <dnext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:494
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:448
 80000b44:	080002d9 	j	80000b64 <labelskipnextstate>
 80000b48:	241a0004 	li	k0,4
 
 80000b4c <enext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:497
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:451
 80000b4c:	080002d9 	j	80000b64 <labelskipnextstate>
 80000b50:	241a0005 	li	k0,5
 
 80000b54 <fnext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:500
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:454
 80000b54:	080002d9 	j	80000b64 <labelskipnextstate>
 80000b58:	241a0006 	li	k0,6
 
 80000b5c <gnext>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:503
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:457
 80000b5c:	080002d9 	j	80000b64 <labelskipnextstate>
 80000b60:	241a0007 	li	k0,7
 
 80000b64 <labelskipnextstate>:
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:511
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:461
 80000b64:	1000fdc0 	b	80000268 <readIO>
 80000b68:	00000000 	nop
-C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:512
+C:\Users\RampantVelcro\Documents\Class\ECE540\ECE540Project1\Software/main.S:462
 80000b6c:	00000000 	nop
 
 Disassembly of section .debug_aranges:
@@ -1640,7 +1640,7 @@ Disassembly of section .debug_line:
  144:	02000205 	0x2000205
  148:	3a038000 	xori	v1,s0,0x8000
  14c:	00040201 	0x40201
- 150:	01550101 	0x1550101
+ 150:	01510101 	0x1510101
  154:	00020000 	sll	zero,v0,0x0
  158:	0000001d 	0x1d
  15c:	0efb0101 	jal	bec0404 <__memory_size+0xbea0c04>
@@ -1652,81 +1652,80 @@ Disassembly of section .debug_line:
  174:	00000000 	nop
  178:	02050000 	0x2050000
  17c:	80000204 	lb	zero,516(zero)
- 180:	4b013103 	c2	0x1013103
+ 180:	4b012d03 	c2	0x1012d03
  184:	4b4b4b4b 	c2	0x14b4b4b
  188:	4b4b4b4b 	c2	0x14b4b4b
  18c:	83838383 	lb	v1,-31869(gp)
  190:	4b4b4b4b 	c2	0x14b4b4b
- 194:	514b4b50 	beql	t2,t3,12ed8 <__isr_vec_space+0x12eb8>
+ 194:	4d4b4b4c 	0x4d4b4b4c
  198:	4b4b4b4b 	c2	0x14b4b4b
- 19c:	4a0a034c 	c2	0xa034c
- 1a0:	4b4c4b4b 	c2	0x14c4b4b
- 1a4:	164b4c4b 	bne	s2,t3,132d4 <__isr_vec_space+0x132b4>
- 1a8:	bbbbbb83 	swr	k1,-17533(sp)
- 1ac:	bbbbbbbb 	swr	k1,-17477(sp)
- 1b0:	134b4b87 	beq	k0,t3,12fd0 <__isr_vec_space+0x12fb0>
- 1b4:	134b4b85 	beq	k0,t3,12fcc <__isr_vec_space+0x12fac>
- 1b8:	134b4b86 	beq	k0,t3,12fd4 <__isr_vec_space+0x12fb4>
- 1bc:	134b4b86 	beq	k0,t3,12fd8 <__isr_vec_space+0x12fb8>
- 1c0:	134b4b86 	beq	k0,t3,12fdc <__isr_vec_space+0x12fbc>
- 1c4:	134b4b86 	beq	k0,t3,12fe0 <__isr_vec_space+0x12fc0>
- 1c8:	134b4b86 	beq	k0,t3,12fe4 <__isr_vec_space+0x12fc4>
- 1cc:	134b4b86 	beq	k0,t3,12fe8 <__isr_vec_space+0x12fc8>
- 1d0:	4a110387 	c2	0x110387
- 1d4:	bbbcbb4c 	swr	gp,-17588(sp)
- 1d8:	bbbb83bb 	swr	k1,-31813(sp)
- 1dc:	bbbbbbbc 	swr	k1,-17476(sp)
- 1e0:	bbbbbbbb 	swr	k1,-17477(sp)
- 1e4:	bd4b8abc 	cache	0xb,-30020(t2)
- 1e8:	88bbbb85 	lwl	k1,-17531(a1)
- 1ec:	4b88bd4b 	c2	0x188bd4b
- 1f0:	bbbb85bd 	swr	k1,-31299(sp)
+ 19c:	4b4b4d4b 	c2	0x14b4d4b
+ 1a0:	4c4b4b4c 	0x4c4b4b4c
+ 1a4:	bb83164b 	swr	v1,5707(gp)
+ 1a8:	bbbbbbbb 	swr	k1,-17477(sp)
+ 1ac:	4b87bbbb 	c2	0x187bbbb
+ 1b0:	4b85134b 	c2	0x185134b
+ 1b4:	4b86134b 	c2	0x186134b
+ 1b8:	4b86134b 	c2	0x186134b
+ 1bc:	4b86134b 	c2	0x186134b
+ 1c0:	4b86134b 	c2	0x186134b
+ 1c4:	4b86134b 	c2	0x186134b
+ 1c8:	4b86134b 	c2	0x186134b
+ 1cc:	0387134b 	0x387134b
+ 1d0:	bb4c4a11 	swr	t4,18961(k0)
+ 1d4:	83bbbbbc 	lb	k1,-17476(sp)
+ 1d8:	bbbcbbbb 	swr	gp,-17477(sp)
+ 1dc:	bbbbbbbb 	swr	k1,-17477(sp)
+ 1e0:	85bcbbbb 	lh	gp,-17477(t5)
+ 1e4:	bb85bc4b 	swr	a1,-17333(gp)
+ 1e8:	bc4b85bb 	cache	0xb,-31301(v0)
+ 1ec:	85bc4b85 	lh	gp,19333(t5)
+ 1f0:	bbbbbbbb 	swr	k1,-17477(sp)
  1f4:	bbbbbbbb 	swr	k1,-17477(sp)
- 1f8:	4b86bbbb 	c2	0x186bbbb
- 1fc:	4b4b85bb 	c2	0x14b85bb
- 200:	4b4b85bb 	c2	0x14b85bb
- 204:	4b4b85bb 	c2	0x14b85bb
- 208:	4b4b8514 	c2	0x14b8514
- 20c:	bb4b8613 	swr	t3,-31213(k0)
- 210:	bb4b4b85 	swr	t3,19333(k0)
- 214:	85bb85bb 	lh	k1,-31301(t5)
- 218:	0e03134b 	jal	80c4d2c <__memory_size+0x80a552c>
- 21c:	010a0382 	0x10a0382
- 220:	bbbbbb83 	swr	k1,-17533(sp)
- 224:	bbbbbbbb 	swr	k1,-17477(sp)
- 228:	bbbbbb86 	swr	k1,-17530(sp)
- 22c:	bbbcbbbb 	swr	gp,-17477(sp)
- 230:	bbbbbbbb 	swr	k1,-17477(sp)
- 234:	bbbb83bb 	swr	k1,-31813(sp)
- 238:	bbbb85bb 	swr	k1,-31301(sp)
+ 1f8:	85bb4b86 	lh	k1,19334(t5)
+ 1fc:	85bb4b4b 	lh	k1,19275(t5)
+ 200:	85bb4b4b 	lh	k1,19275(t5)
+ 204:	85144b4b 	lh	s4,19275(t0)
+ 208:	86134b4b 	lh	s3,19275(s0)
+ 20c:	4b85bb4b 	c2	0x185bb4b
+ 210:	85bbbb4b 	lh	k1,-17589(t5)
+ 214:	134b85bb 	beq	k0,t3,fffe1904 <__entry+0x403e1904>
+ 218:	010a0386 	0x10a0386
+ 21c:	bbbbbb83 	swr	k1,-17533(sp)
+ 220:	bbbbbbbb 	swr	k1,-17477(sp)
+ 224:	bbbbbb85 	swr	k1,-17531(sp)
+ 228:	bbbbbbbb 	swr	k1,-17477(sp)
+ 22c:	bbbbbbbb 	swr	k1,-17477(sp)
+ 230:	bbbb83bb 	swr	k1,-31813(sp)
+ 234:	bbbb85bb 	swr	k1,-31301(sp)
+ 238:	bbbbbbbb 	swr	k1,-17477(sp)
  23c:	bbbbbbbb 	swr	k1,-17477(sp)
- 240:	bbbbbbbb 	swr	k1,-17477(sp)
- 244:	bb83bbbb 	swr	v1,-17477(gp)
- 248:	bbbbbb85 	swr	k1,-17531(sp)
+ 240:	bb83bbbb 	swr	v1,-17477(gp)
+ 244:	bbbbbb85 	swr	k1,-17531(sp)
+ 248:	bbbbbbbb 	swr	k1,-17477(sp)
  24c:	bbbbbbbb 	swr	k1,-17477(sp)
- 250:	bbbbbbbb 	swr	k1,-17477(sp)
- 254:	85bb83bb 	lh	k1,-31813(t5)
+ 250:	85bb83bb 	lh	k1,-31813(t5)
+ 254:	bbbbbbbb 	swr	k1,-17477(sp)
  258:	bbbbbbbb 	swr	k1,-17477(sp)
  25c:	bbbbbbbb 	swr	k1,-17477(sp)
- 260:	bbbbbbbb 	swr	k1,-17477(sp)
- 264:	bb85bb83 	swr	a1,-17533(gp)
+ 260:	bb85bb83 	swr	a1,-17533(gp)
+ 264:	bbbbbbbb 	swr	k1,-17477(sp)
  268:	bbbbbbbb 	swr	k1,-17477(sp)
- 26c:	bbbbbbbb 	swr	k1,-17477(sp)
- 270:	83bbbbbb 	lb	k1,-17477(sp)
- 274:	bbbb85bb 	swr	k1,-31301(sp)
+ 26c:	83bbbbbb 	lb	k1,-17477(sp)
+ 270:	bbbb85bb 	swr	k1,-31301(sp)
+ 274:	bbbbbbbb 	swr	k1,-17477(sp)
  278:	bbbbbbbb 	swr	k1,-17477(sp)
- 27c:	bbbbbbbb 	swr	k1,-17477(sp)
- 280:	bb83bbbb 	swr	v1,-17477(gp)
- 284:	bbbbbb85 	swr	k1,-17531(sp)
+ 27c:	bb83bbbb 	swr	v1,-17477(gp)
+ 280:	bbbbbb85 	swr	k1,-17531(sp)
+ 284:	bbbbbbbb 	swr	k1,-17477(sp)
  288:	bbbbbbbb 	swr	k1,-17477(sp)
- 28c:	bbbbbbbb 	swr	k1,-17477(sp)
- 290:	85bb83bb 	lh	k1,-31813(t5)
- 294:	13841386 	beq	gp,a0,50b0 <__isr_vec_space+0x5090>
+ 28c:	85bb83bb 	lh	k1,-31813(t5)
+ 290:	13841386 	beq	gp,a0,50ac <__isr_vec_space+0x508c>
+ 294:	13841384 	beq	gp,a0,50a8 <__isr_vec_space+0x5088>
  298:	13841384 	beq	gp,a0,50ac <__isr_vec_space+0x508c>
  29c:	13841384 	beq	gp,a0,50b0 <__isr_vec_space+0x5090>
- 2a0:	13841384 	beq	gp,a0,50b4 <__isr_vec_space+0x5094>
- 2a4:	0402838a 	bltzl	zero,fffe10d0 <__entry+0x403e10d0>
- 2a8:	Address 0x00000000000002a8 is out of bounds.
+ 2a0:	04028386 	bltzl	zero,fffe10bc <__entry+0x403e10bc>
+ 2a4:	Address 0x00000000000002a4 is out of bounds.
 
 
 Disassembly of section .pdr:

@@ -1160,7 +1160,7 @@ Disassembly of section .debug_line:
  144:	02000205 	0x2000205
  148:	3a038000 	xori	v1,s0,0x8000
  14c:	00040201 	0x40201
- 150:	01550101 	0x1550101
+ 150:	01510101 	0x1510101
  154:	00020000 	sll	zero,v0,0x0
  158:	0000001d 	0x1d
  15c:	0efb0101 	jal	bec0404 <__memory_size+0xbea0c04>
@@ -1172,81 +1172,80 @@ Disassembly of section .debug_line:
  174:	00000000 	nop
  178:	02050000 	0x2050000
  17c:	80000204 	lb	zero,516(zero)
- 180:	4b013103 	c2	0x1013103
+ 180:	4b012d03 	c2	0x1012d03
  184:	4b4b4b4b 	c2	0x14b4b4b
  188:	4b4b4b4b 	c2	0x14b4b4b
  18c:	83838383 	lb	v1,-31869(gp)
  190:	4b4b4b4b 	c2	0x14b4b4b
- 194:	514b4b50 	beql	t2,t3,12ed8 <__isr_vec_space+0x12eb8>
+ 194:	4d4b4b4c 	0x4d4b4b4c
  198:	4b4b4b4b 	c2	0x14b4b4b
- 19c:	4a0a034c 	c2	0xa034c
- 1a0:	4b4c4b4b 	c2	0x14c4b4b
- 1a4:	164b4c4b 	bne	s2,t3,132d4 <__isr_vec_space+0x132b4>
- 1a8:	bbbbbb83 	swr	k1,-17533(sp)
- 1ac:	bbbbbbbb 	swr	k1,-17477(sp)
- 1b0:	134b4b87 	beq	k0,t3,12fd0 <__isr_vec_space+0x12fb0>
- 1b4:	134b4b85 	beq	k0,t3,12fcc <__isr_vec_space+0x12fac>
- 1b8:	134b4b86 	beq	k0,t3,12fd4 <__isr_vec_space+0x12fb4>
- 1bc:	134b4b86 	beq	k0,t3,12fd8 <__isr_vec_space+0x12fb8>
- 1c0:	134b4b86 	beq	k0,t3,12fdc <__isr_vec_space+0x12fbc>
- 1c4:	134b4b86 	beq	k0,t3,12fe0 <__isr_vec_space+0x12fc0>
- 1c8:	134b4b86 	beq	k0,t3,12fe4 <__isr_vec_space+0x12fc4>
- 1cc:	134b4b86 	beq	k0,t3,12fe8 <__isr_vec_space+0x12fc8>
- 1d0:	4a110387 	c2	0x110387
- 1d4:	bbbcbb4c 	swr	gp,-17588(sp)
- 1d8:	bbbb83bb 	swr	k1,-31813(sp)
- 1dc:	bbbbbbbc 	swr	k1,-17476(sp)
- 1e0:	bbbbbbbb 	swr	k1,-17477(sp)
- 1e4:	bd4b8abc 	cache	0xb,-30020(t2)
- 1e8:	88bbbb85 	lwl	k1,-17531(a1)
- 1ec:	4b88bd4b 	c2	0x188bd4b
- 1f0:	bbbb85bd 	swr	k1,-31299(sp)
+ 19c:	4b4b4d4b 	c2	0x14b4d4b
+ 1a0:	4c4b4b4c 	0x4c4b4b4c
+ 1a4:	bb83164b 	swr	v1,5707(gp)
+ 1a8:	bbbbbbbb 	swr	k1,-17477(sp)
+ 1ac:	4b87bbbb 	c2	0x187bbbb
+ 1b0:	4b85134b 	c2	0x185134b
+ 1b4:	4b86134b 	c2	0x186134b
+ 1b8:	4b86134b 	c2	0x186134b
+ 1bc:	4b86134b 	c2	0x186134b
+ 1c0:	4b86134b 	c2	0x186134b
+ 1c4:	4b86134b 	c2	0x186134b
+ 1c8:	4b86134b 	c2	0x186134b
+ 1cc:	0387134b 	0x387134b
+ 1d0:	bb4c4a11 	swr	t4,18961(k0)
+ 1d4:	83bbbbbc 	lb	k1,-17476(sp)
+ 1d8:	bbbcbbbb 	swr	gp,-17477(sp)
+ 1dc:	bbbbbbbb 	swr	k1,-17477(sp)
+ 1e0:	85bcbbbb 	lh	gp,-17477(t5)
+ 1e4:	bb85bc4b 	swr	a1,-17333(gp)
+ 1e8:	bc4b85bb 	cache	0xb,-31301(v0)
+ 1ec:	85bc4b85 	lh	gp,19333(t5)
+ 1f0:	bbbbbbbb 	swr	k1,-17477(sp)
  1f4:	bbbbbbbb 	swr	k1,-17477(sp)
- 1f8:	4b86bbbb 	c2	0x186bbbb
- 1fc:	4b4b85bb 	c2	0x14b85bb
- 200:	4b4b85bb 	c2	0x14b85bb
- 204:	4b4b85bb 	c2	0x14b85bb
- 208:	4b4b8514 	c2	0x14b8514
- 20c:	bb4b8613 	swr	t3,-31213(k0)
- 210:	bb4b4b85 	swr	t3,19333(k0)
- 214:	85bb85bb 	lh	k1,-31301(t5)
- 218:	0e03134b 	jal	80c4d2c <__memory_size+0x80a552c>
- 21c:	010a0382 	0x10a0382
- 220:	bbbbbb83 	swr	k1,-17533(sp)
- 224:	bbbbbbbb 	swr	k1,-17477(sp)
- 228:	bbbbbb86 	swr	k1,-17530(sp)
- 22c:	bbbcbbbb 	swr	gp,-17477(sp)
- 230:	bbbbbbbb 	swr	k1,-17477(sp)
- 234:	bbbb83bb 	swr	k1,-31813(sp)
- 238:	bbbb85bb 	swr	k1,-31301(sp)
+ 1f8:	85bb4b86 	lh	k1,19334(t5)
+ 1fc:	85bb4b4b 	lh	k1,19275(t5)
+ 200:	85bb4b4b 	lh	k1,19275(t5)
+ 204:	85144b4b 	lh	s4,19275(t0)
+ 208:	86134b4b 	lh	s3,19275(s0)
+ 20c:	4b85bb4b 	c2	0x185bb4b
+ 210:	85bbbb4b 	lh	k1,-17589(t5)
+ 214:	134b85bb 	beq	k0,t3,fffe1904 <__entry+0x403e1904>
+ 218:	010a0386 	0x10a0386
+ 21c:	bbbbbb83 	swr	k1,-17533(sp)
+ 220:	bbbbbbbb 	swr	k1,-17477(sp)
+ 224:	bbbbbb85 	swr	k1,-17531(sp)
+ 228:	bbbbbbbb 	swr	k1,-17477(sp)
+ 22c:	bbbbbbbb 	swr	k1,-17477(sp)
+ 230:	bbbb83bb 	swr	k1,-31813(sp)
+ 234:	bbbb85bb 	swr	k1,-31301(sp)
+ 238:	bbbbbbbb 	swr	k1,-17477(sp)
  23c:	bbbbbbbb 	swr	k1,-17477(sp)
- 240:	bbbbbbbb 	swr	k1,-17477(sp)
- 244:	bb83bbbb 	swr	v1,-17477(gp)
- 248:	bbbbbb85 	swr	k1,-17531(sp)
+ 240:	bb83bbbb 	swr	v1,-17477(gp)
+ 244:	bbbbbb85 	swr	k1,-17531(sp)
+ 248:	bbbbbbbb 	swr	k1,-17477(sp)
  24c:	bbbbbbbb 	swr	k1,-17477(sp)
- 250:	bbbbbbbb 	swr	k1,-17477(sp)
- 254:	85bb83bb 	lh	k1,-31813(t5)
+ 250:	85bb83bb 	lh	k1,-31813(t5)
+ 254:	bbbbbbbb 	swr	k1,-17477(sp)
  258:	bbbbbbbb 	swr	k1,-17477(sp)
  25c:	bbbbbbbb 	swr	k1,-17477(sp)
- 260:	bbbbbbbb 	swr	k1,-17477(sp)
- 264:	bb85bb83 	swr	a1,-17533(gp)
+ 260:	bb85bb83 	swr	a1,-17533(gp)
+ 264:	bbbbbbbb 	swr	k1,-17477(sp)
  268:	bbbbbbbb 	swr	k1,-17477(sp)
- 26c:	bbbbbbbb 	swr	k1,-17477(sp)
- 270:	83bbbbbb 	lb	k1,-17477(sp)
- 274:	bbbb85bb 	swr	k1,-31301(sp)
+ 26c:	83bbbbbb 	lb	k1,-17477(sp)
+ 270:	bbbb85bb 	swr	k1,-31301(sp)
+ 274:	bbbbbbbb 	swr	k1,-17477(sp)
  278:	bbbbbbbb 	swr	k1,-17477(sp)
- 27c:	bbbbbbbb 	swr	k1,-17477(sp)
- 280:	bb83bbbb 	swr	v1,-17477(gp)
- 284:	bbbbbb85 	swr	k1,-17531(sp)
+ 27c:	bb83bbbb 	swr	v1,-17477(gp)
+ 280:	bbbbbb85 	swr	k1,-17531(sp)
+ 284:	bbbbbbbb 	swr	k1,-17477(sp)
  288:	bbbbbbbb 	swr	k1,-17477(sp)
- 28c:	bbbbbbbb 	swr	k1,-17477(sp)
- 290:	85bb83bb 	lh	k1,-31813(t5)
- 294:	13841386 	beq	gp,a0,50b0 <__isr_vec_space+0x5090>
+ 28c:	85bb83bb 	lh	k1,-31813(t5)
+ 290:	13841386 	beq	gp,a0,50ac <__isr_vec_space+0x508c>
+ 294:	13841384 	beq	gp,a0,50a8 <__isr_vec_space+0x5088>
  298:	13841384 	beq	gp,a0,50ac <__isr_vec_space+0x508c>
  29c:	13841384 	beq	gp,a0,50b0 <__isr_vec_space+0x5090>
- 2a0:	13841384 	beq	gp,a0,50b4 <__isr_vec_space+0x5094>
- 2a4:	0402838a 	bltzl	zero,fffe10d0 <__entry+0x403e10d0>
- 2a8:	Address 0x00000000000002a8 is out of bounds.
+ 2a0:	04028386 	bltzl	zero,fffe10bc <__entry+0x403e10bc>
+ 2a4:	Address 0x00000000000002a4 is out of bounds.
 
 
 Disassembly of section .pdr:
