@@ -147,16 +147,14 @@ readIO:
 	#figure out the state change speed, if the state should go to next state based on clock counter
 
 	#input from button data comes in bits like so -> UDLR
+	#Buttons (UPLR)
 	#forward -> 0011 (3)
 	#reverse -> 1100 (12)
-	#idle -> 0000 (0) or 1111 (15)
-	#clockwise -> 0010 (d2) or 0111 (d7) or 0100(4) or 1110(14)
-	#counterclockwise -> 0001 (d1) or 1011 (d11) or 1000(8) or 1101(13)
-	#clockwise fast -> 0110 (d6) (reverse right and left)
-	#counter clockwise fast -> 1001 (d9) (reverse left and right motors)
-
-	#0100 reverse right = clockwise
-	#1000 reverse left = counter clockwise
+	#idle -> 0000 (0) or 1111 (15), 10, 5
+	#clockwise -> 4, 2, 7, 13
+	#counterclockwise -> 1, 11, 14, 8
+	#clockwise fast -> 0101 (d5) (reverse right and left)
+	#counter clockwise fast -> 1010 (d10) (reverse left and right motors)
 
 	beq $19, 6, labelfast #clockwise fast
 	beq $19, 9, labelfast #counterclockwise fast
@@ -274,11 +272,12 @@ readIO:
 	#reset the loop counter (timer), next state reached
 	li $20, 0
 
+	#Buttons (UPLR)
 	#forward -> 0011 (3)
 	#reverse -> 1100 (12)
-	#idle -> 0000 (0) or 1111 (15)
-	#clockwise -> 0001 (d1) or 0111 (d7) (reverseright motor, right motor and left motor on)
-	#counterclockwise -> 0010 (d2) or 1011 (d11) (reverse left motor, left motor and right on)
+	#idle -> 0000 (0) or 1111 (15), 10, 5
+	#clockwise -> 4, 2, 7, 13
+	#counterclockwise -> 1, 11, 14, 8
 	#clockwise fast -> 0101 (d5) (reverse right and left)
 	#counter clockwise fast -> 1010 (d10) (reverse left and right motors)
 	
@@ -298,12 +297,12 @@ readIO:
 	  beq $19, 12, dnext   		#reverse
 	  beq $19, 1, anext 			#cc
 	  beq $19, 11, anext 			#cc
-	  beq $19, 4, anext 			#cc
+	  beq $19, 4, anext 			#cw
 	  beq $19, 14, anext 			#cc
 	  beq $19, 9, anext 			#ccf
 	  beq $19, 2, anext			#cw
 	  beq $19, 7, anext			#cw
-	  beq $19, 8, anext			#cw
+	  beq $19, 8, anext			#cc
 	  beq $19, 13, anext			#cw
 	  beq $19, 6, anext			#cwf
 	  beq $19, 0, gnext			#idle

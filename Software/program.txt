@@ -1172,7 +1172,7 @@ Disassembly of section .debug_line:
  1b0:	86138613 	lh	s3,-31213(s0)
  1b4:	86138613 	lh	s3,-31213(s0)
  1b8:	86138613 	lh	s3,-31213(s0)
- 1bc:	11034d4b 	beq	t0,v1,136ec <__isr_vec_space+0x136cc>
+ 1bc:	0f034d4b 	jal	c0d352c <__memory_size+0xc0b3d2c>
  1c0:	bbbcbb4a 	swr	gp,-17590(sp)
  1c4:	bbbb83bb 	swr	k1,-31813(sp)
  1c8:	bbbbbbbc 	swr	k1,-17476(sp)
@@ -1191,7 +1191,7 @@ Disassembly of section .debug_line:
  1fc:	bb4b4b85 	swr	t3,19333(k0)
  200:	85bb85bb 	lh	k1,-31301(t5)
  204:	0387134b 	0x387134b
- 208:	bb83010a 	swr	v1,266(gp)
+ 208:	bb83010b 	swr	v1,267(gp)
  20c:	bbbbbbbb 	swr	k1,-17477(sp)
  210:	bb86bbbb 	swr	a2,-17477(gp)
  214:	bbbbbbbb 	swr	k1,-17477(sp)
