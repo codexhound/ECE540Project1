@@ -43,9 +43,7 @@ LEDS_ADDR		= 0xbf800000        	# (o) LEDS Address
  
 .globl main
 main:
-	li   $20, 0                    #1hz counter
-	li   $21, 0                    #5hz counter
-	li   $22, 0                    #10hz counter
+	li   $20, 0                    #loop counter
    	li	 $23, 0                         	# $23 = hundreds place counter register
    	li	 $24, 0					# $24 = tens place counter register
    	li	 $25, 0                         	# $25 = ones place counter register
@@ -62,13 +60,9 @@ main:
 	li 	  $11, 0xFF					# Turn off all of the decimal points
 	sw	  $11, 0($17)
 
-	li $4, 0xf4240 					#slow period
+	li $4, 0xf4240 					#slow period (1hz approximated to 1000000 readIO loops)
 	li $5, 0x30d40 					#norm period
 	li $6, 0x186a0 					#fast period
-
-	#li    $v0, 30					#load time sys call code into v0($2)
-	#syscall
-	#add   $6, $0, $a0                #low bit starting time (from a0)
    
 readIO:
 	li    $3,  0						# lower digit data, reset to 0 every write
@@ -76,15 +70,7 @@ readIO:
 	lw	  $19, 0($18)       			# read buttons: $19 = button values
 	andi  $19, $19, 0xf     			# load only the lowest 4 bits ($19 stores values of UDLR Buttons)	(don't care what the others are)
 	sw    $11, 0($12)    				# write switch values to leds
-	# sw    $11, 0($16)   			# write switch values to lower 7 segment digits
 
-	#get time passed in milliseconds
-	#li    $v0, 30					#load time sys call code into v0($2)
-	#syscall
-	#add   $8, $0, $a0                #low bit check time (from a0)
-
-	#subu $10, $8, $6 # low order difference = $8 - $6 //only need lower part of the difference, $10 holds the time difference in milliseconds
-	
 	#write out the current compass digits
 	add $11, $0, $23  #write hundreds value
 	sll $11, $11, 16 #shift the data 16 bits left for digit 2 data (hundreds)
@@ -99,7 +85,7 @@ readIO:
 	
 	#motion state machine code (outputs only)
 	
-	beq $26, 0, labelidle //start pseudo code for motion state machine, if branch state == goto label
+	beq $26, 0, labelidle //start code for motion state machine, if branch state == goto label
 	beq $26, 1, labela
 	beq $26, 2, labelb
 	beq $26, 3, labelc
@@ -113,65 +99,52 @@ readIO:
 	labelidle:
 	  	#write correct digit code to digit data
 	  	li $11, 28  #write blank value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	labela:
 	  	#write correct digit code to digit data
 	  	li $11, 16  #write a value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	
 	labelb:
 	  	#write correct digit code to digit data
 	  	li $11, 17  #write b value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	  
 	labelc:
 	  	#write correct digit code to digit data
 	  	li $11, 18  #write c value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	  
 	labeld:
 	  	#write correct digit code to digit data
 	  	li $11, 19  #write d value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	  
 	labele:
 	  	#write correct digit code to digit data
 	  	li $11, 20  #write e value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	  
 	labelf:
 	  	#write correct digit code to digit data
 	  	li $11, 21  #write f value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	  
 	labelg:
 	  	#write correct digit code to digit data
 	  	li $11, 22  #write g value
-		sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
-		add $3, $11, $3 #add this to lower digit data for later write out
 	  	j labelclock
 	
 	labelclock:
 	
+	sll $11, $11, 24 #shift the data 24 bits left for digit 3 data
+	add $3, $11, $3 #add this to lower digit data for later write out
+
 	#write the digit data to the digit address
 	sw	  $3, 0($16) 
 	
 	#branch statement is checking if equal, if true then goes to label (equivalent to if statement)
-	#figure out the clock speed (loop speed), if the state should go to next state based on clock counter(pseudocode)
+	#figure out the state change speed, if the state should go to next state based on clock counter
 
 	#input from button data comes in bits like so -> UDLR
 	#forward -> 0011 (3)
@@ -206,38 +179,33 @@ readIO:
 	
 	j labelskipnextstate
 
-
-
 	labelfast:
-		#has the timer reached the 10 hz period (P = .1 seconds)
-		slt $11, $22, $6 #(set $11 to 1 if time difference is less than 100)
+		#check timer for 10hz speed (P = .1 seconds) goto labelfastcheck if P reached
+		slt $11, $20, $6 #(set $11 to 1 if time difference is less than 100000)
 		bne $11, 1, labelfastcheck #goto if not equal to 1, (greater than or equal)
-		#beq $22, 100000, labelfastcheck
 		#ifnot
 		j labelskipnextstate #skip all the next state stuff, not time yet
 		
-	labelfastcheck:
+	labelfastcheck: #compass change check for 10hz speed, goto statemachinenext when done
 		beq $19, 9, labelcompassdecrement #decrement in any case that robot is turning cc, increment otherwise
 		beq $19, 6, labelcompassincrement
 		j statemachinenext
 		
 	labelslow:
-		#check 1hz counter (P = 1 seconds)
-		slt $11, $20, $4 #(set $11 to 1 if time difference is less than 1000)
+		#check timer for 1hz speed (P = 1 seconds), goto statemachinenext if P reached
+		slt $11, $20, $4 #(set $11 to 1 if time difference is less than 1000000)
 		bne $11, 1, statemachinenext #goto if not equal to 1, (greater than or equal)
-		#beq $20, 750000, statemachinenext
 		#an else
 		j labelskipnextstate
 		
 	labelnorm:
-		#check 5 hz counter (P = .2 seconds)
-		slt $11, $21, $5 #(set $11 to 1 if time difference is less than 200)
+		#check timer for 5hz speed (P = .2 seconds),goto labelnormcheck if P reached
+		slt $11, $20, $5 #(set $11 to 1 if time difference is less than 200000)
 		bne $11, 1, labelnormcheck #goto if not equal to 1, (greater than or equal)
-		#beq $21, 100000, labelnormcheck
 		#an else
 		j labelskipnextstate
 		
-	labelnormcheck:
+	labelnormcheck: #compass change check for 5hz speed, goto statemachinenext when done
 		beq $19, 1, labelcompassdecrement #decrement in any case that robot is turning cc, increment otherwise
 		beq $19, 2, labelcompassincrement
 		beq $19, 11, labelcompassdecrement
@@ -302,16 +270,9 @@ readIO:
 		j statemachinenext
 	
 	statemachinenext: #motion state machine (next state only)
-	
-	#resets the clock timer (gets the starting time from syscall)
-	#li    $v0, 30					#load time sys call code into v0($2)
-	#syscall
-	#add   $6, $0, $a0                #low bit check time (from a0)
 
-	#reset the timers
+	#reset the loop counter (timer), next state reached
 	li $20, 0
-	li $21, 0
-	li $22, 0
 
 	#forward -> 0011 (3)
 	#reverse -> 1100 (12)
@@ -339,7 +300,6 @@ readIO:
 	  beq $19, 11, anext 			#cc
 	  beq $19, 4, anext 			#cc
 	  beq $19, 14, anext 			#cc
-
 	  beq $19, 9, anext 			#ccf
 	  beq $19, 2, anext			#cw
 	  beq $19, 7, anext			#cw
@@ -362,7 +322,7 @@ readIO:
 	  beq $19, 9, fnext			#ccf	
 	  beq $19, 2, bnext			#cw	
 	  beq $19, 7, bnext			#cw	
-	  beq $19, 8, fnext			#cw
+	  beq $19, 8, fnext			#cc
 	  beq $19, 13, bnext			#cw
 	  beq $19, 6, bnext			#cwf	
 	  beq $19, 0, idlenext		#idle		
@@ -379,7 +339,7 @@ readIO:
 	  beq $19, 9, anext			#ccf			
 	  beq $19, 2, cnext			#cw			
 	  beq $19, 7, cnext			#cw
-	  beq $19, 8, anext			#cw
+	  beq $19, 8, anext			#cc
 	  beq $19, 13, cnext			#cw
 	  beq $19, 6, cnext			#cwf			
 	  beq $19, 0, idlenext		#idle					
@@ -484,10 +444,8 @@ readIO:
 	  j labelskipnextstate
 	  
 	labelskipnextstate:
-	#increment the clock timers
+	#increment the loop counter (timer)
 	add $20, 1
-	add $21, 1
-	add $22, 1
 
 	beq   $0, $0, readIO 	# repeat
 	nop                  	# branch delay slot
