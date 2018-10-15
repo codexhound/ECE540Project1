@@ -63,6 +63,7 @@ module mfp_ahb_display(
            end
          endcase
 
+//decode en, dp, and digit registers for pin output
 mfp_ahb_sevensegtimer sevensegtimer(.clk(HCLK),     
        .resetn(HRESETn),  
        .EN(en),      
