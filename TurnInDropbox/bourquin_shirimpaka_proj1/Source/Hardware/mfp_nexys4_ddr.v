@@ -1,4 +1,4 @@
-// mfp_ahb_withloader.v
+// mfp_nexys4_ddr.v
 // Collaborators: Michael Bourquin, Jean Shirimpaka
 // Project: Project 1: SimpleBot
 // File Description:
